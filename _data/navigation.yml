@@ -1,0 +1,28 @@
+# Site navigation links
+main:
+
+# - title: About
+#   url: /about1/
+
+- title: Research
+  url: /research/
+
+- title: Teaching
+  url: /teaching/
+
+- title: Publications
+  url: /publication/
+
+- title: CV
+  url: /cv/
+  alt: Curriculum Vitae
+
+- title: Talks
+  url: /talks/
+
+- title: Links
+  url: /links/
+
+
+- title: Life
+  url: /life/

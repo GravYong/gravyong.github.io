@@ -1,0 +1,259 @@
+\let\nofiles\relax % This is because res says to not emit aux files,
+                   % but lastpage needs aux files.
+\documentclass[margin,line]{res}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{etaremune}
+\usepackage[normalem]{ulem}
+
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\voffset -25pt
+%\topmargin -.2in
+\headsep 25pt
+\textwidth=6.0in
+\textheight=9.0in
+\itemsep=0in
+\parsep=0in
+
+% Headings
+\pagestyle{fancy}
+\lhead{Yong Gao --- Curriculum Vitae}
+\chead{}
+\rhead{\thepage\ of \pageref*{LastPage}}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+\newcommand{\myname}{Yong Gao --- Curriculum Vitae}
+\newlength{\mynamewidth}
+\settowidth{\mynamewidth}{\namefont\myname}
+
+\name{\hspace*{0.5\textwidth}\hspace{-0.5\mynamewidth} \large{\myname}\vspace*{.1in}}
+% On the first page, have no header.
+\thispagestyle{empty}
+
+\begin{resume}
+
+\input{ContactContent.tex}
+
+% \section{\sc Citizenship}
+% United States
+
+\section{\sc Education}
+{\bf Ph.D. candidate, Physics,} Peking University, Beijing, China \hfill {\bf August 2018-Present}\\
+\vspace*{-.1in}
+\begin{itemize}
+\item[ ] Thesis Advisor: Prof.\ Lijing Shao
+\item[ ] Thesis Title: {\it Probing Structures of Neutron Stars with Gravitational Waves}
+\end{itemize}
+
+{\bf B.S., Physics,} Dalian University of Technology, Dalian, Liaoning Province, China \hfill {\bf July 2018}\\
+\vspace*{-.1in}
+\begin{itemize}
+\item[ ] Degree conferred with honor.
+\item[ ] Senior Dissertation Advisors: Prof.\ Renxin Xu and Prof.\ Chong Li
+\item[] Dissertation Title: {\it The Electron Distributions of Strangelets in the Thomas-Fermi Model}
+% \item[ ] G.P.A.: 3.8/4.0
+\end{itemize}
+
+
+\section{\sc Research Interests}
+
+{\bf Understanding composition and state of matter inside neutron stars (NSs).} Modelling gravitational waves (GWs) from NSs: tidal/spin effects in binary NS and NS-black hole systems, global non-radial oscillations of NSs, mountains on NSs. Studying dynamics and observational consequences of free/forced precession of NSs. 
+
+{\bf Testing strong-field gravity.} Modelling GW waveform from compact binaries and oscillating compact objects beyond general relativity. Constructing timing model and testing gravity with pulsar timing. Studying the structures of rotating, tidally-deformed, and oscillating NSs in alternative theories of gravity.
+
+
+
+\section{\sc Honors and Awards}
+{\bf Principal Scholarship,} Peking University \hfill {\bf 2022-2023}\\
+\\
+{\bf Tung Scholarship,} Peking University \hfill {\bf 2021--2022}\\
+\\
+{\bf Merit Student,} Peking University \hfill {\bf 2021--2022}\\
+\\
+{\bf The Second Prize for Oral Presentation,} Physics Five Universities \hfill {\bf April 2021}\\
+\\
+{\bf Vela Prize for Oral Presentation,} FAST/Future Pulsar Symposium 9 \hfill {\bf August 2020}\\
+\\
+{\bf National Scholarship,} Peking University \hfill {\bf 2019--2020}\\
+% \\
+% {\bf Merit Student,} Peking University \hfill {\bf 2019--2020}\\
+\\
+{\bf Excellent Teaching Assistant Award,} Peking University \hfill {\bf 2019--2020}\\
+\\
+{\bf Principal Scholarship,} Peking University \hfill {\bf 2018--2019}\\
+\\
+{\bf Learning Excellence Award (First Prize),} Dalian University of Technology \hfill {\bf 2015--2016}\\
+\\
+% {\bf National Encouragement Scholarship,} Dalian University of Technology \hfill {\bf 2015--2016}\\
+% \\
+% {\bf National Encouragement Scholarship,} Dalian University of Technology \hfill {\bf 2014--2015}\\
+% \\
+% Added to improve page breaks
+
+\vspace{-1em}
+
+\section{\sc Teaching Experience}
+
+{\bf Teaching Assistant}, Peking University
+\vspace*{.05in}
+\begin{itemize}
+  \item[ ] \href{http://friendshao.github.io/teaching/ced22/}{Electrodynamics (B)} \hfill {\bf Fall 2022}
+\item[ ] \href{http://friendshao.github.io/teaching/phy21/}{General Physics I}, $^{*}${\small incl. Mechanics $\&$ Electromagnetism} \hfill {\bf Fall 2021}
+\item[ ] \href{http://friendshao.github.io/teaching/thmech19/}{Theoretical Mechanics (A)}, {\small{\bf Excellent Teaching Assistant Award}} \hfill {\bf Fall 2019}
+\end{itemize}
+
+\section{\sc Co-advised Students}
+
+{\bf Ph.D. Student}, Peking University
+\vspace*{.05in}
+\begin{itemize}
+\item[] {\bf Hongbo Li}, co-advised with Prof. Lijing Shao and Prof. Renxin Xu 
+\hfill {\bf 2021--present} \\
+\vspace*{.05in}
+{\it  Oscillations of neutron stars and gravitational-wave asteroseismology}
+\end{itemize}
+{\bf Undergraduate Students}, Peking University
+\vspace*{.05in}
+\begin{itemize}
+\item[] {\bf Haoyang Qi}, co-advised with Prof. Lijing Shao
+\hfill {\bf 2021-Present}\\
+{\it Constraints on ultralight dark matter with pulsar timing}
+\item[] {\bf Huimei Wang}, co-advised with Prof. Lijing Shao 
+\hfill {\bf 2020-2021}\\
+{\it Undergraduate Dissertation: The structure of neutron stars with anisotropic pressure}
+\item[] {\bf Jingyuan Deng}, co-advised with Prof. Lijing Shao 
+\hfill {\bf 2020-2021}\\
+{\it Undergraduate Dissertation: Forced precession of neutron stars}
+\item[] {\bf Zexin Hu}, co-advised with Prof. Lijing Shao
+\hfill {\bf 2020-2021}\\
+{\it Scalarized neutron stars in massive scalar-tensor gravity}
+\end{itemize}
+
+\section{\sc Computer Skills}
+%{\bf Languages---}%
+Proficient in {\sc Mathematica}, Python, and Matlab. Experience in C, Bash, and HPC.\\
+Markup languages: \LaTeX, Markdown.
+
+% {\bf Operating systems---}%
+% Mac OS, Linux/*nix.
+
+{\bf Code development---} Most contributions can be found at \url{https://github.com/GravYong}.
+
+\section{\sc Professional Activities, Outreach, and Service}
+{\bf KAGRA Collaboration}
+\vspace*{.05in}
+% \begin{itemize}
+%   \item[] {Member of Compact Binaries Coalescence (CBC) Group} \hfill{\bf 2018--Present}
+% \end{itemize}
+\begin{itemize}
+\item[] Member of KAGRA Future Strategy Committee (FSC) \hfill{\bf 2021--Present}
+\end{itemize}
+
+% {\bf Conference organizer}
+% \vspace*{.05in}
+
+{\bf Chair of conference session/group meeting}
+\vspace*{.05in}
+\begin{itemize}
+\item[]
+\href{https://gwwiki.icrr.u-tokyo.ac.jp/JGWwiki/KAGRA/KSC/FSC/FWG/1stMeeting}{KAGRA Future Working Group 1st Open Meeting} ({\it online}) \hfill {\bf November 2021}
+\end{itemize}
+\begin{itemize}
+  \item[]
+  {Chair of the }\href{https://kiaagravity.github.io}{\sc Kiaagravity group meeting}   \hfill {\bf 2020-2021}
+  \end{itemize}
+
+{\bf Journal referee}
+\vspace*{.05in}
+% \hspace*{1em}
+\begin{itemize}
+  \item[]
+  Classical and Quantum Gravity (CQG)
+  \hfill {\bf 2021-Present}
+  \item[]
+  Research in Astronomy and Astrophysics (RAA)
+  \hfill {\bf 2021-Present}
+  \item[]
+  Science China Physics, Mechanics $\&$ Astronomy (SCPMA)
+  \hfill {\bf 2021-Present}
+\end{itemize}
+
+% {\bf Participated Grants}
+% \vspace*{.05in}\\
+% \hspace*{1em}
+% ???
+% Twiddle this for spacing
+% \newpage
+
+\ifx\nopubs\undefined
+\input{PubsContent.tex}
+\else
+%
+\fi
+
+\section{\sc Popular Science Articles}
+
+\begin{etaremune}
+  \item {\bf Y. Gao}, L. Shao, R.-X. Xu, (2019) \href{https://gravyong.github.io/files/BNS_Popular.pdf}{The waltz of a binary neutron star system} ({an article about GW170817, \it in Chinese}).
+  \item {\bf Y. Gao}, (2022) \href{https://gravyong.github.io/files/NS_Structure_Popular.pdf}{The structures of neutron stars} ({an article about dense matter in neutron stars, \it in Chinese}).
+  \item {\bf Y. Gao}, L. Shao, (2022) \href{https://www.ligo.org/science/Publication-O3bTGR/translations/science-summary-chinese-simplified.pdf}{Does Einstein's theory of gravity hold up to the latest \\
+  LIGO/VIRGO/KAGRA observations?} ({\bf translated} from \href{https://www.ligo.org/science/Publication-O3bTGR/}{the English version}).
+\end{etaremune}
+
+
+\input{TalksContent.tex}
+
+\newpage{}
+% \vspace{0.1in}
+
+\section{\sc References}
+\vspace*{.05in}
+\parbox{\textwidth}{%
+{\bf Lijing~Shao,} Assistant Professor of Kavli Institute for Astronomy and Astrophysics, Peking University \\
+K217, Kavli Institute for Astronomy and Astrophysics  \\
+5 Yiheyuan Road, Haidian District \\
+Beijing 100871, P. R. China \\
+email: \href{mailto:lshao@pku.edu.cn}{lshao@pku.edu.cn} \\
+office phone: \href{tel: 86-10-6275-8461}{ 86-10-6275-8461}}
+\par
+\parbox{\textwidth}{%
+{\bf Renxin~Xu,} Professor of Physics, Peking University\\
+2912, Science Teaching Building No.~2, Department of Astronomy\\
+5 Yiheyuan Road, Haidian District \\
+Beijing 100871, P. R. China \\
+email: \href{mailto:r.x.xu@pku.edu.cn}{r.x.xu@pku.edu.cn} \\
+office phone: \href{tel:86-10-6275-8631}{86-10-6275-8631}}
+\par
+\parbox{\textwidth}{%
+{\bf David Ian Jones,} Professor of Mathematical Physics, University of Southampton\\
+B54, West Highfield Campus\\
+University Road, SO17 1BJ\\
+Southampton, United Kingdom \\
+email: \href{mailto:d.i.jones@soton.ac.uk}{d.i.jones@soton.ac.uk} \\
+office phone: \href{tel:44-23-8059-4829}{44-23-8059-4829}}
+\par
+\parbox{\textwidth}{%
+{\bf Gregory Desvignes,} Postdoctoral Researcher of Radio Astronomy, Max Planck Institute for Radio Astronomy\\
+Auf dem Hügel 69\\
+D-53121 Bonn, Germany\\
+email: \href{mailto:gdesvignes.astro@gmail.com}{gdesvignes.astro@gmail.com}}
+% office phone: \href{tel:44-23-8059-4829}{44-23-8059-4829}}
+
+\end{resume}
+\end{document}
+
+% Local Variables:
+% mode: latex
+% End:

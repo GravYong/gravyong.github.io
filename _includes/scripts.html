@@ -1,0 +1,12 @@
+<script src="{{ base_path }}/assets/js/main.min.js"></script>
+
+{% comment %}
+Any custom scripts that need to be loaded after main.min
+see this issue: https://github.com/mmistakes/minimal-mistakes/issues/794
+{% endcomment %}
+{% if page.scripts %}
+    {{ page.scripts }}
+{% endif %}
+
+{% include analytics.html %}
+{% include /comments-providers/scripts.html %}

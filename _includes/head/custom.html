@@ -1,0 +1,23 @@
+<!-- start custom head snippets -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+{% if page.jsxgraph %}
+<!-- JSXGraph -->
+<script type="text/javascript" src="{{ site.url }}/assets/js/vendor/jsxgraphcore.js"></script>
+<link rel="stylesheet" href="{{ site.url }}/assets/css/vendor/jsxgraph.css">
+{% endif %}
+{% if page.introjs %}
+<!-- Intro.js -->
+<script type="text/javascript" src="{{ site.url }}/assets/js/vendor/intro.min.js"></script>
+<link rel="stylesheet" href="{{ site.url }}/assets/css/vendor/introjs.min.css">
+{% endif %}
+<!-- Academicons -->
+<link rel="stylesheet" href="{{ site.url }}/assets/css/academicons.min.css"/>
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->

@@ -1,0 +1,91 @@
+---
+layout: null
+permalink: /puz/
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>HTML5 Across Lite Reader</title>
+    <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/xw.css">
+  </head>
+
+  <body>
+    <div id="dropzone" style="height: 587px;">
+      <h1>HTML5 Across Lite Reader</h1>
+      <p><strong>Simply drag &amp; drop a <tt>.puz</tt> file
+      here</strong>, and I'll make you a crossword. No files will be
+      sent to the server, this is entirely done using your modern Web
+      browser. Note that this only currently works with the following
+      HTML5-compatible browsers:</p>
+      <ul>
+        <li>Google Chrome 4+</li>
+        <li>Mozilla Firefox 3.6+</li>
+      </ul>
+      <p><strong>Note 2021-09-04:</strong>
+        The original web app used to live
+        at <a href="http://derekslager.com/puz/">Derek Slager's
+        site</a>, but at some point it stopped working. I (Leo Stein)
+        grabbed a static archived version from
+        the <a href="https://archive.org/">Internet Archive</a> and am
+        mirroring it here for personal convenience. All credit goes to
+        Derek Slager for originally developing and hosting the page.
+      </p>
+    </div>
+    <div style="padding: 2px 8px"><small>© 2011 Derek Slager <a target="_blank" href="mailto:derekslager@gmail.com">Feedback</a></small></div>
+    <table id="help" style="display: none">
+      <tbody>
+        <tr>
+          <td class="k"><kbd>UP</kbd>/<kbd>DOWN</kbd>/<kbd>LEFT</kbd>/<kbd>RIGHT</kbd></td>
+          <td>Moves around the grid or changes direction.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>CTRL</kbd> + <kbd>UP</kbd>/<kbd>DOWN</kbd>/<kbd>LEFT</kbd>/<kbd>RIGHT</kbd></td>
+          <td>Change current direction.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>SHIFT</kbd> + <kbd>UP</kbd>/<kbd>DOWN</kbd>/<kbd>LEFT</kbd>/<kbd>RIGHT</kbd></td>
+          <td>Moves to the previous or next clue.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>HOME</kbd>/<kbd>END</kbd></td>
+          <td>Moves to the first or last square in the current word.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>SHIFT</kbd> + <kbd>HOME</kbd>/<kbd>END</kbd></td>
+          <td>Moves to the first or last square in the puzzle.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>TAB</kbd>/<kbd>ENTER</kbd></td>
+          <td>Moves to the next word.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>SHIFT</kbd> + <kbd>TAB</kbd>/<kbd>ENTER</kbd></td>
+          <td>Moves to the previous word.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>DELETE</kbd></td>
+          <td>Erases the current square value.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>BACKSPACE</kbd></td>
+          <td>Erases the current square value and moves to the previous
+          square, if possible.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>SPACE</kbd></td>
+          <td>Erases the current square and moves to the next square, if
+          possible.</td>
+        </tr>
+        <tr>
+          <td class="k"><kbd>INSERT</kbd>/<kbd>F2</kbd></td>
+          <td>Opens the rebus entry dialog.</td>
+        </tr>
+      </tbody>
+    </table>
+    <script type="text/javascript" src="{{ site.url }}/assets/js/xw.js"></script>
+    <script type="text/javascript">
+      var app = new derekslager.xword.XwordHtml();
+      app.load();
+    </script>
+</body></html>
