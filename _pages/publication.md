@@ -90,7 +90,7 @@ I also list my publications below for consistency.
     <a href="https://doi.org/10.48550/arXiv.2303.14130" style="color: #F48FB1;">[arXiv]</a>.
 
 5. H.-B. Li,
-   Y. Gao,
+   **Y. Gao**,
   L. Shao,
   R.-X. Xu,
   *g-mode of neutron stars in pseudo-Newtonian gravity*,
