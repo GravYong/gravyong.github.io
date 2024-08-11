@@ -11,7 +11,7 @@ header:
 ---
 
 ![]({{ site.url }}/images/yong_front.png)
-{: .align-right style="width: 300px"} 
+{: .align-right style="width: 400px"} 
 
 Welcome to my website! I am currently a postdoctoral researcher in the [Computational Relativistic Astrophysics group](https://www.aei.mpg.de/comp-rel-astro) led by [Masaru Shibata](https://www2.yukawa.kyoto-u.ac.jp/~masaru.shibata/indexj.html) at the [Albert Einstein Institute](https://www.aei.mpg.de/2772/de) in Potsdam.
 
