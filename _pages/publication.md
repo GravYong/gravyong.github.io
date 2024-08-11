@@ -22,59 +22,7 @@ I also list my publications below for consistency.
 </p>
 <hr style="border:1px solid gray">
 
-# 2023
-
-1. C. Zhang,
-  **Y. Gao**,
-  C. J. Xia,
-  R.-X. Xu,
-  *Rescaling strangeon stars and its implications on gravitational-wave echoes*,
-  accepted by Phys. Rev. D
-  <a href="https://doi.org/10.48550/arXiv.2305.13323" style="color: #F48FB1;">[arXiv]</a>.
-
-2. E. P. Zhou, 
-  **Y. Gao**,
-  Y. R. Zhou, 
-  X. Y. Lai, 
-  L. Shao,
-  W. Y. Wang, 
-  S.-L. Xiong, 
-  R.-X. Xu, 
-  S. X. Yi, 
-  H. Yue, 
-  Z. Zhang,
-  *The precursor of GRB211211A: a tide-induced giant quake?*,
-  submitted to Research in Astronomy and Astrophysics
-  <a href="https://doi.org/10.48550/arXiv.2305.10682" style="color: #F48FB1;">[arXiv]</a>.
-
-3. S. C. Chen,
-   **Y. Gao**,
-   E. P. Zhou,
-   R.-X. Xu,
-   *Free energy of anisotropic strangeon stars*,
-   submitted to Research in Astronomy and Astrophysics
-  <a href="https://doi.org/10.48550/arXiv.2305.19687" style="color: #F48FB1;">[arXiv]</a>.
-
-4. **Y. Gao**,
-    L. Shao,
-    J. Steinhoff,
-    *A tight universal relation between the shape eccentricity and the moment of inertia for rotating neutron stars*,
-    accepted by Astrophys. J. 
-    <a href="https://doi.org/10.48550/arXiv.2303.14130" style="color: #F48FB1;">[arXiv]</a>.
-
-
-
-5. H.-B. Li,
-   Y. Gao,
-  L. Shao,
-  R.-X. Xu,
-  *The g-mode of neutron stars in pseudo-Newtonian gravity*,
-  accepted by Phys. Rev. D
-  <a href="https://doi.org/10.48550/arXiv.2302.03856" style="color: #F48FB1;">[arXiv]</a>.
-{: reversed="reversed"}
-
-
-# 2022
+# 2024 
 
 1. G. Desvignes,
   P. Weltevrede,
@@ -89,10 +37,72 @@ I also list my publications below for consistency.
   L. Shao,
   B. Stappers,
   *A freely precessing magnetar following an X-ray outburst*,
-  submitted to Nature Astronomy
+  [Nature Astron. **8**,617-627](https://www.nature.com/articles/s41550-024-02226-7)
   <a href="https://assets.researchsquare.com/files/rs-2281053/v1/8d2a4cf0b98fad7eece4a662.pdf?c=1670213325" style="color: #F48FB1;">[Research Square]</a>.
 
-2. **Y. Gao**,
+  2. Y.~Liu, 
+  H.~B.~Li, 
+  **Y.~Gao**, 
+  L.~Shao,
+  Z.~Hu,
+  Effects from Dark Matter Halos on X-ray Pulsar Pulse Profiles,
+  <a href="https://arxiv.org/abs/2408.04425" style="color: #F48FB1;">[arXiv]</a>.
+
+
+# 2023
+
+1. C. Zhang,
+  **Y. Gao**,
+  C. J. Xia,
+  R.-X. Xu,
+  *Rescaling strangeon stars and its implications on gravitational-wave echoes*,
+  [Phys. Rev. D **108**, 063002](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.063002)
+  <a href="https://doi.org/10.48550/arXiv.2305.13323" style="color: #F48FB1;">[arXiv]</a>.
+
+2. E. P. Zhou, 
+  **Y. Gao**,
+  Y. R. Zhou, 
+  X. Y. Lai, 
+  L. Shao,
+  W. Y. Wang, 
+  S.-L. Xiong, 
+  R.-X. Xu, 
+  S. X. Yi, 
+  H. Yue, 
+  Z. Zhang,
+  *The precursor of GRB211211A: a tide-induced giant quake?*,
+  [Res. Astron. Astrophys. **24**, 025019](https://iopscience.iop.org/article/10.1088/1674-4527/ad0825)
+  <a href="https://doi.org/10.48550/arXiv.2305.10682" style="color: #F48FB1;">[arXiv]</a>.
+
+3. S. C. Chen,
+   **Y. Gao**,
+   E. P. Zhou,
+   R.-X. Xu,
+   *Free energy of anisotropic strangeon stars*,
+   [Res. Astron. Astrophys. **24**, 025005](https://iopscience.iop.org/article/10.1088/1674-4527/ad1430)
+  <a href="https://doi.org/10.48550/arXiv.2305.19687" style="color: #F48FB1;">[arXiv]</a>.
+
+4. **Y. Gao**,
+    L. Shao,
+    J. Steinhoff,
+    *A tight universal relation between the shape eccentricity and the moment of inertia for rotating neutron stars*,
+    [Astrophys. J. **954**, 16](https://iopscience.iop.org/article/10.3847/1538-4357/ace776)
+    <a href="https://doi.org/10.48550/arXiv.2303.14130" style="color: #F48FB1;">[arXiv]</a>.
+
+5. H.-B. Li,
+   Y. Gao,
+  L. Shao,
+  R.-X. Xu,
+  *g-mode of neutron stars in pseudo-Newtonian gravity*,
+  [Phys. Rev. D \textbf{108}, no.6, 064005](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.064005)
+  <a href="https://doi.org/10.48550/arXiv.2302.03856" style="color: #F48FB1;">[arXiv]</a>.
+
+{: reversed="reversed"}
+
+# 2022
+
+
+1. **Y. Gao**,
   L. Shao,
   G. Desvignes,
   D. I. Jones,
@@ -102,13 +112,13 @@ I also list my publications below for consistency.
   accepted by Mon. Not. R. Astron. Soc.
   <a href="http://arxiv.org/abs/2211.17087" style="color: #F48FB1;">[arXiv]</a>.
 
-3. **Y. Gao**, 
+2. **Y. Gao**, 
   R. Xu, 
   L. Shao, 
   *Precession of spheroids under Lorentz violation and observational consequences for neutron stars*, 
   Proceedings of the Ninth Meeting on CPT and Lorentz Symmetry, in press.
 
-4. H.-B. Li, 
+3. H.-B. Li, 
   **Y. Gao**,
   L. Shao, 
   R.-X. Xu, 
@@ -117,7 +127,7 @@ I also list my publications below for consistency.
   [Mon. Not. R. Astron. Soc. **516**, 6172](https://academic.oup.com/mnras/advance-article-abstract/doi/10.1093/mnras/stac2622/6705433)
   <a href="http://arxiv.org/abs/2206.09407" style="color: #F48FB1;">[arXiv]</a>.
 
-5. **Y, Gao**, 
+4. **Y, Gao**, 
   X.-Y. Lai, 
   L. Shao, 
   R.-X. Xu,
@@ -125,7 +135,7 @@ I also list my publications below for consistency.
   [Mon. Not. R. Astron. Soc. **509**, 2758](https://doi.org/10.1093/mnras/stab3181)
   <a href="http://arxiv.org/abs/2109.13234" style="color: #F48FB1;">[arXiv]</a>.
 
-6. R. Xu, 
+5. R. Xu, 
   **Y. Gao**, 
   L. Shao, 
   *Neutron stars in massive scalar-Gauss-Bonnet gravity: Spherical structure and time-independent perturbations*, 
