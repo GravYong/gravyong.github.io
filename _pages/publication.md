@@ -109,7 +109,7 @@ I also list my publications below for consistency.
   M. Kramer,
   G. Yim,
   *Precession of magnetars: dynamical evolutions and modulations on polarized electromagnetic waves*,
-  accepted by Mon. Not. R. Astron. Soc.
+  [Mon.Not.Roy.Astron.Soc. 519, 1080-1097](https://academic.oup.com/mnras/article/519/1/1080/6873850?login=false).
   <a href="http://arxiv.org/abs/2211.17087" style="color: #F48FB1;">[arXiv]</a>.
 
 2. **Y. Gao**, 
