@@ -40,12 +40,12 @@ I also list my publications below for consistency.
   [Nature Astron. **8**,617-627](https://www.nature.com/articles/s41550-024-02226-7)
   <a href="https://assets.researchsquare.com/files/rs-2281053/v1/8d2a4cf0b98fad7eece4a662.pdf?c=1670213325" style="color: #F48FB1;">[Research Square]</a>.
 
-  2. Y.~Liu, 
-  H.~B.~Li, 
-  **Y.~Gao**, 
-  L.~Shao,
-  Z.~Hu,
-  Effects from Dark Matter Halos on X-ray Pulsar Pulse Profiles,
+  2. Y. Liu, 
+  H. B. Li, 
+  **Y. Gao**, 
+  L. Shao,
+  Z. Hu,
+  *Effects from Dark Matter Halos on X-ray Pulsar Pulse Profiles*,
   <a href="https://arxiv.org/abs/2408.04425" style="color: #F48FB1;">[arXiv]</a>.
 
 
@@ -94,7 +94,7 @@ I also list my publications below for consistency.
   L. Shao,
   R.-X. Xu,
   *g-mode of neutron stars in pseudo-Newtonian gravity*,
-  [Phys. Rev. D \textbf{108}, no.6, 064005](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.064005)
+  [Phys. Rev. D \textbf{108}, 064005](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.064005)
   <a href="https://doi.org/10.48550/arXiv.2302.03856" style="color: #F48FB1;">[arXiv]</a>.
 
 {: reversed="reversed"}
@@ -223,18 +223,25 @@ I also list my publications below for consistency.
 # Popular science articles
 
 1. **Y. Gao**, 
+G. Desvignes, 
+L. Shao
+(2024) 
+[一颗自由进动的磁星](https://dds.sciengine.com/cfs/files/pdfs/view/0023-074X/C9C2E28FCEC3452AB1A2AEF32A5DBB53-mark.pdf) (an article about freely precessing magnetars, in Chinese).
+
+2. **Y. Gao**, 
 (2022) 
 [The structures of neutron stars](https://gravyong.github.io/files/NS_Structure_Popular.pdf) (an article about dense matter in neutron stars, in Chinese).
 
-2. **Y. Gao**,
+3. **Y. Gao**,
    L. Shao, 
    (2022) 
    [Does Einstein's theory of gravity hold up to the latest LIGO/VIRGO/KAGRA observations?](https://www.ligo.org/science/Publication-O3bTGR/translations/science-summary-chinese-simplified.pdf) (translated from [the Einglish version](https://www.ligo.org/science/Publication-O3bTGR/)).
 
-3. **Y. Gao**, 
+4. **Y. Gao**, 
 L. Shao, 
 R.-X. Xu, 
 (2019) [The waltz of a binary neutron star system](https://gravyong.github.io/files/BNS_Popular.pdf) (an article about GW170817, in Chinese).
+
 {: reversed="reversed"}
 
 
