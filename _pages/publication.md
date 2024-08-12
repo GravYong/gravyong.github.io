@@ -94,7 +94,7 @@ I also list my publications below for consistency.
   L. Shao,
   R.-X. Xu,
   *g-mode of neutron stars in pseudo-Newtonian gravity*,
-  [Phys. Rev. D \textbf{108}, 064005](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.064005)
+  [Phys. Rev. D **108**, 064005](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.064005)
   <a href="https://doi.org/10.48550/arXiv.2302.03856" style="color: #F48FB1;">[arXiv]</a>.
 
 {: reversed="reversed"}
