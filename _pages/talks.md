@@ -13,6 +13,8 @@ header:
 # Invited talks 
 <hr style="border:1px solid gray">
 
+* The structures of neutron stars and observational constraints, Seminar, **Dalian University of Technology**, July 2023
+
 * Probing neutron star structures with gravitational dynamics, online Seminar, **Yang Zhou University**, September 2022. 
   <!-- <a href="http://arxiv.org/abs/2109.13234" style="color: #F48FB1;">Slides</a> -->
 
@@ -25,7 +27,7 @@ header:
 # Contributed talks in conferences
 <hr style="border:1px solid gray">
 
-* 
+* Probing dense matter inside NSs through free precession and dynamical tides, talk, **Brainstorming workshop: Deciphering the equation of state using gravitational waves from astrophysical sources**, University of Warsaw, Poland, August 2024.
 
 * Precession of magnetars and modulations on polarized electromagnetic waves, talk, **Physics Five Universities**, Peking University, China, August 2022.
  
