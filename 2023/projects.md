@@ -10,7 +10,7 @@ header:
    overlay_filter: 0.0
 ---
 
-## 奇异物质与奇异星的章节
+## ~~奇异物质与奇异星的章节~~
 
 ## Convective instability analysis of hyper-massive NSs
 
@@ -29,8 +29,4 @@ header:
 ## A timing template for precessing magnetar
 
 ## Dynamical tides: a correct discription of tidal overlapping (or alternative methods)
-
-
-
-
 
