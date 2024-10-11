@@ -22,31 +22,31 @@ I also list my publications below for consistency.
 </p>
 <hr style="border:1px solid gray">
 
+
+
 # 2024 
 
-1. G. Desvignes,
-  P. Weltevrede,
-  **Y. Gao**,
-  D. I. Jones,
-  M. Kramer,
-  M. Caleb,
-  R. Karuppusamy,
-  L. Levin,
-  K. Liu,
-  A. G. Lyne,
-  L. Shao,
-  B. Stappers,
-  *A freely precessing magnetar following an X-ray outburst*,
-  [Nature Astron. **8**,617-627](https://www.nature.com/articles/s41550-024-02226-7)
-  <a href="https://assets.researchsquare.com/files/rs-2281053/v1/8d2a4cf0b98fad7eece4a662.pdf?c=1670213325" style="color: #F48FB1;">[Research Square]</a>.
 
-  2. Y. Liu, 
-  H. B. Li, 
-  **Y. Gao**, 
-  L. Shao,
-  Z. Hu,
-  *Effects from Dark Matter Halos on X-ray Pulsar Pulse Profiles*,
-  <a href="https://arxiv.org/abs/2408.04425" style="color: #F48FB1;">[arXiv]</a>.
+<ol reversed>
+  <li>A. T. L. Lam, <strong>Y. Gao</strong>, H. J. Kuan, M. Shibata, K. Van Aelst, and K. Kiuchi, 
+      <em>Accessing universal relations of binary neutron star waveforms in massive scalar-tensor theory</em>, 
+      <a href="https://arxiv.org/abs/2410.00137" style="color: #F48FB1;">[arXiv]</a>.
+  </li>
+  <li>Z. Wang, <strong>Y. Gao</strong>, D. Liang, J. Zhao, and L. Shao, 
+      <em>Vetting quark-star models with gravitational waves in the hierarchical Bayesian framework</em>, 
+      <a href="https://arxiv.org/abs/2409.11103" style="color: #F48FB1;">[arXiv]</a>.
+  </li>
+  <li>Y. Liu, H. B. Li, <strong>Y. Gao</strong>, L. Shao, Z. Hu, 
+      <em>Effects from Dark Matter Halos on X-ray Pulsar Pulse Profiles</em>, 
+      <a href="https://arxiv.org/abs/2408.04425" style="color: #F48FB1;">[arXiv]</a>.
+  </li>
+  <li>G. Desvignes, P. Weltevrede, <strong>Y. Gao</strong>, D. I. Jones, M. Kramer, M. Caleb, R. Karuppusamy, L. Levin, K. Liu, 
+      A. G. Lyne, L. Shao, B. Stappers, 
+      <em>A freely precessing magnetar following an X-ray outburst</em>, 
+      <a href="https://www.nature.com/articles/s41550-024-02226-7">Nature Astron. <strong>8</strong>, 617-627</a> 
+      <a href="https://assets.researchsquare.com/files/rs-2281053/v1/8d2a4cf0b98fad7eece4a662.pdf?c=1670213325" style="color: #F48FB1;">[Research Square]</a>.
+  </li>
+</ol>
 
 
 # 2023
@@ -97,7 +97,7 @@ I also list my publications below for consistency.
   [Phys. Rev. D **108**, 064005](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.064005)
   <a href="https://doi.org/10.48550/arXiv.2302.03856" style="color: #F48FB1;">[arXiv]</a>.
 
-{: reversed="reversed"}
+
 
 # 2022
 
