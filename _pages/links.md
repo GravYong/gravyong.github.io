@@ -7,5 +7,6 @@ excerpt:
 tags: []
 ---
 
-Here is a collection of links you may find useful. If there are some
-links you think ought to be here, feel free to suggest them to me.
+Here is a collection of links you may find useful. 
+
+## The master equations for relativistic interfacial mode <a href="https://gravyong.github.io/files/interfacial_mode.nb" style="color: #F48FB1;">[arXiv]</a>.
