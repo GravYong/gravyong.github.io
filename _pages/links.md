@@ -1,27 +1,18 @@
 ---
 title: "Links"
 permalink: /links/
-date: 2015-06-11
-modified: 2018-01-02
 excerpt:
 tags: []
+date: 2024-12-20
+modified: 2024-12-20
+header:
+    overlay_image: header.png
+    overlay_filter: 0.1 
 ---
 
-Here is a collection of links you may find useful.
+# Data release, public code, and animations
+<hr style="border:1px solid gray">
 
-{% include base_path %}
-{% capture written_label %}'None'{% endcapture %}
-
-<!-- ## The master equations for polar modes of neutron stars with solid crust <a href="https://gravyong.github.io/files/interfacial_mode.nb" style="color: #F48FB1;" download>[download: ns-mode]</a>.
-
-## Convective stability analysis of massive neutron stars formed in binary mergers <a href="https://gravyong.github.io/convection/" style="color: #F48FB1;" >[link: convection_animation]</a>.
-
-
-1. The master equations for polar modes of neutron stars with solid crust <a href="https://gravyong.github.io/files/interfacial_mode.nb" style="color: #F48FB1;">[link: ns-mode]</a>.
-<hr style="border: 1px solid #808080; margin: 0; padding: 0;">
-
-2. Convective stability analysis of massive neutron stars formed in binary mergers <a href="https://gravyong.github.io/convection/" style="color: #F48FB1;">[link: convection_animation]</a>.
-<hr style="border: 1px solid #808080; margin: 0; padding: 0;"> -->
 
 1. The master equations for polar modes of neutron stars with solid crust <a href="https://gravyong.github.io/files/interfacial_mode.nb" style="color: #F48FB1;">[download: ns-mode]</a>
 <span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
