@@ -20,10 +20,17 @@ header:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video with Caption and MathJax</title>
 
-  <!-- 引入 MathJax -->
-  <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
+ 
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 
   <style>
 
@@ -55,7 +62,7 @@ header:
       <source src="https://gravyong.github.io/assets/videos/APR4_2_4.mp4" type="video/mp4">
     </video>
     <figcaption>
-      The time evolution of the Schwarzschild criterion (first column), the Reyleigh-Solberg criterion (the second column), and the Criterion I (third column) in the $x-z$ (first row) and $x-y$ (second row) planes for the model <tt>APR4-135135</tt>. The black dashed line marks the place where the criterion equals zero. The black solid line represents the density contour at restmass density $$\rho = 10^{11.5} \, \rm g\,cm^{-3}$$.
+      The time evolution of the Schwarzschild criterion (first column), the Reyleigh-Solberg criterion (the second column), and the Criterion I (third column) in the $x-z$ (first row) and $x-y$ (second row) planes for the model <tt>APR4-135135</tt>. The black dashed line marks the place where the criterion equals zero. The black solid line represents the density contour at restmass density $\rho = 10^{11.5} \, \rm g\,cm^{-3}$.
     </figcaption>
   </figure>
 
