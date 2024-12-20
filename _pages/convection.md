@@ -75,7 +75,7 @@ header:
 
   <figure>
     <video controls>
-      <source src="https://gravyong.github.io/assets/videos/MPA1_1_4.mp4" type="video/mp4">
+      <source src="https://gravyong.github.io/assets/videos/SLy4_2_5.mp4" type="video/mp4">
     </video>
     <figcaption>
       Fig. 3: Same as Fig. 1 but for the model <tt>SLy4-128128</tt>.
