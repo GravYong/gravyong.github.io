@@ -36,5 +36,3 @@ You can see the embedded PDF below or <u><a href="https://gravyong.github.io/cv/
 <br/>
 
 <embed src="https://gravyong.github.io/cv/Yong.pdf" type="application/pdf" width="100%" />
-
-{{ site.url }}/research/
