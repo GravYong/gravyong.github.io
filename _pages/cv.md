@@ -29,8 +29,8 @@ header:
 # Full CV
 <hr style="border:1px solid gray"> 
 
-{% include base_path %}
-{% capture written_label %}'None'{% endcapture %}
+<!-- {% include base_path %}
+{% capture written_label %}'None'{% endcapture %} -->
 
 You can see the embedded PDF below or <u><a href="https://gravyong.github.io/cv/Yong.pdf">download it here.</a></u>
 <br/>

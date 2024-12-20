@@ -124,7 +124,7 @@ $right-sidebar-width-wide   : 400px;
 $susy: (
   columns: 12,
   // column-width: 90px,
-  gutters: 1/4,
+  gutters: math.div(1, 4),
   math: fluid,
   output: float,
   gutter-position: after,
