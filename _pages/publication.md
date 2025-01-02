@@ -33,11 +33,13 @@ I also list my publications below for consistency.
       <a href="https://arxiv.org/abs/2410.00137" style="color: #F48FB1;">[arXiv]</a>.
   </li>
   <li>Z. Wang, <strong>Y. Gao</strong>, D. Liang, J. Zhao, and L. Shao, 
-      <em>Vetting quark-star models with gravitational waves in the hierarchical Bayesian framework</em>, 
+      <em>Vetting quark-star models with gravitational waves in the hierarchical Bayesian framework</em>,
+      <a href="https://iopscience.iop.org/article/10.1088/1475-7516/2024/11/038">JCAP <strong>11</strong>, 038</a> 
       <a href="https://arxiv.org/abs/2409.11103" style="color: #F48FB1;">[arXiv]</a>.
   </li>
   <li>Y. Liu, H. B. Li, <strong>Y. Gao</strong>, L. Shao, Z. Hu, 
-      <em>Effects from Dark Matter Halos on X-ray Pulsar Pulse Profiles</em>, 
+      <em>Effects from Dark Matter Halos on X-ray Pulsar Pulse Profiles</em>,
+       <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.110.083018">Phys. Rev. D <strong>110</strong>,083018 </a> 
       <a href="https://arxiv.org/abs/2408.04425" style="color: #F48FB1;">[arXiv]</a>.
   </li>
   <li>G. Desvignes, P. Weltevrede, <strong>Y. Gao</strong>, D. I. Jones, M. Kramer, M. Caleb, R. Karuppusamy, L. Levin, K. Liu, 
