@@ -6,11 +6,11 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Leo C. Stein"
+locale                   : "Germany"
+title                    : "Yong Gao"
 title_separator          : "-"
-name                     : "Leo C. Stein"
-description              : "Assistant Professor @ Ole Miss. Specializing in gravity and general relativity."
+name                     : "Yong Gao"
+description              : "Postdoctoral researcher at MPI"
 url                      : "http://127.0.0.1:4000" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
