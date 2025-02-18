@@ -87,7 +87,7 @@ author:
   codepen          :
   dribbble         :
   flickr           :
-#   facebook         : "leo.stein"
+  facebook         : 
   foursquare       :
   github           : "GravYong"
   google_plus      :
@@ -97,17 +97,16 @@ author:
   linkedin         :
   pinterest        :
   soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
+  stackoverflow    : # "123456/username" (the last part of your profile url
   steam            :
   tumblr           :
-#   twitter          : 
+  twitter          : 
   vine             :
   weibo            :
   xing             :
   youtube          :
-  benty-fields     : "user_profile/2921"
-  # Custom author fields follow
-#   arxiv            : "stein_l_1"
+  benty-fields     : “https://www.benty-fields.com/user_profile/2921”
+  # arxiv            : "stein_l_1"
   orcid            : "0000-0003-1390-5477"
   inspire          : "Yong.Gao.1"
   google-scholar   : "rVmSIyoAAAAJ&hl"
