@@ -51,7 +51,7 @@ header:
 
 * Free precession of neutron stars, talk, **Gravitation and Cosmology Symposium**, Chongqing, China, December 2020.
 
-* Triaxially-deformed Freely-precessing Neutron Stars: Continuous electromagnetic and gravitational radiation, **FAST/Future Pulsar Symposium 9**, Xiamen, China, August 2020
+* Triaxially-deformed freely-precessing neutron stars: Continuous electromagnetic and gravitational radiation, **FAST/Future Pulsar Symposium 9**, Xiamen, China, August 2020
   
 
 # Group meeting presentations
