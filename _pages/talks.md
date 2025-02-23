@@ -13,7 +13,7 @@ header:
 # Invited talks 
 <hr style="border:1px solid gray">
 
-* Hydrodynamical instability analysis of massive neutron stars formed in binary mergers, talk, **Purple Mountain Observatory**, January 2025
+* Hydrodynamical instability analysis of massive neutron stars formed in binary mergers, talk, **Workshop on gravitational waves and compact stars**, Purple Mountain Observatory, January 2025
 
 * Binary neutron star mergers: From pre-merger interfacial-mode dynamical tides to post-merger hydrodynamical instabilities
 , Seminar, **Yangzhou University**, December 2024
