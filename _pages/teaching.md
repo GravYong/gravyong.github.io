@@ -16,3 +16,10 @@ header:
  - [General Physics I](http://friendshao.github.io/teaching/phy21/), *including mechanics & electromagnetism, Fall 2021, taught by Lijing Shao
  - [Theoretical Mechanics (A)](http://friendshao.github.io/teaching/thmech19/), Fall 2019, taught by Lijing Shao
  - [Introduction to Astrophysics](https://psr.pku.edu.cn/rxx/teach/astro/), Spring 2018, taught by Renxin Xu
+
+
+ # Lecturer
+<hr style="border:1px solid gray">
+-[Jürgen Ehlers Spring School on Gravitational Physics](https://springschool.aei.mpg.de/), [slides](https://gravyong.github.io/files/neutron_star_I.pdf), [lecture notes](https://gravyong.github.io/files/JESS_NS_NotesI.pdf)
+
+
