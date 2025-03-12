@@ -20,6 +20,9 @@ header:
 2. Convective stability analysis of massive neutron stars formed in binary mergers <a href="https://gravyong.github.io/convection/" style="color: #F48FB1;">[link: convection_animation]</a>
 <span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
 
+3. The master equations for tidal deformability of NSs in massive scalar tensor gravity <a href="https://gravyong.github.io/files/tidal_mstg.nb" style="color: #F48FB1;">[download: tidal-mstg]</a>
+<span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
+
 
 
 
