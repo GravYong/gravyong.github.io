@@ -31,7 +31,7 @@ I also list my publications below for consistency.
 
 <ol reversed>
   <li>A. T. L. Lam, <strong>Y. Gao</strong>, H. J. Kuan, M. Shibata, K. Van Aelst, and K. Kiuchi, 
-      <em>Accessing universal relations of binary neutron star waveforms in massive scalar-tensor theory</em>, 
+      <em>Accessing universal relations of binary neutron star waveforms in massive scalar-tensor theory</em>, accepted by Phys. Rev. Lett.,
       <a href="https://arxiv.org/abs/2410.00137" style="color: #F48FB1;">[arXiv]</a>.
   </li>
   <li>Z. Wang, <strong>Y. Gao</strong>, D. Liang, J. Zhao, and L. Shao, 
