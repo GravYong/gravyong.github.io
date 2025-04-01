@@ -10,6 +10,8 @@ header:
    overlay_filter: 0.0
 ---
 
+# Ongoing projects
+
 ## Interfacial mode and dynamical tides
 
 1. Relativistic calculation of i-modes of stratified NSs (including g-mode spectrum), observational consequences in EM and GW
@@ -18,45 +20,58 @@ header:
 
 ## BHNS merger with different nuclear parameters
 
-1. update the SACRA code to accept 2D and 3D EOS
+1. update the SACRA code to accept 2D EOS
 
 2. update the primitive recovery scheme 
 
 3. run the BHNS simulations and test the results
 
-## Finite temperature effect in neutron star mergers
+## CFS instability: window and simulation
 
-1. Compare the constant Gamma thermal and tabulated ones
+1. f-mode CFS instability window and damping time
 
-2. A parametrized scheme of the finite-temperature EOS
+2. Simulations of CFS instability
 
-## Mergers with QSs: binary QSs waveform and BH-QS mergers
+# Ongoing tests
+
+## Mergers with QSs: BH-QS mergers
 
 1. BHQS merger, maybe no dynamical ejecta, a clean method to rule out QSs, or completely different
 
 ## binary mergers with pre-merger phase transition 
 
-1. Still in consideration, not sure about the final results, but I want to test 
+1. Test simulations: dynamical ejecta and phase transition 
 
-## Perturbation study in massive scalar-tensor gravity (I,lambda,Q,f,phi-mode)
+## Supernova formation of quark stars
 
-1. study the universal relation and prospects in GW science
+1. think about how to set the process
 
-## Rotating and tidally-deformed solid strange stars
+2. collaborate with Takami Kuroda 
 
-1. Solid perturbation formalism and application as a first step: deviations in scalar tensor gravity
+## Collaborations:
 
-
-## A timing template for precessing magnetar
-
-1. I need a clean model, not too sophisticated
-
-## Other collaborations:
-
-1. Thermal aspects of binary NS merger (second author)
+1. Thermal aspects of binary NS merger (second author, nearly finished)
 
 2. Dynamical-tides eigenfunction analysis 
 
 3. Scalar tensor waveform (together, I will finish the derivation of the perturbation Eqs)
 
+# Still in mind, only work on when I have nothing to do 
 
+## Finite temperature effect in neutron star mergers (hold on)
+
+1. Compare the constant Gamma thermal and tabulated ones
+
+2. A parametrized scheme of the finite-temperature EOS
+
+## Rotating and tidally-deformed solid strange stars (hold on)
+
+1. Solid perturbation formalism and application as a first step
+
+## Perturbation study in massive scalar-tensor gravity (I,lambda,Q,f,phi-mode) (hold on)
+
+1. study the universal relation and prospects in GW science 
+
+## A timing template for precessing magnetar
+
+1. I need a clean model, not too sophisticated
