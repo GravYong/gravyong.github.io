@@ -25,7 +25,7 @@ I also list my publications below for consistency.
 
 # 2025
 
-1. **Y. Gao**, K. Hayashi, K. Kiuchi, A. T. L. Lam, H. J.   Kuan and M. Shibata, *Convective stability analysis of massive neutron stars formed in binary mergers*, Submitted to Physical Review D, <a href="https://arxiv.org/abs/2501.19053" style="color: #F48FB1;">[arXiv]</a>.
+1. **Y. Gao**, K. Hayashi, K. Kiuchi, A. T. L. Lam, H. J.   Kuan and M. Shibata, *Convective stability analysis of massive neutron stars formed in binary mergers*, submitted to Physical Review D, <a href="https://arxiv.org/abs/2501.19053" style="color: #F48FB1;">[arXiv]</a>.
 
 # 2024 
 

@@ -44,9 +44,9 @@ header:
 
 ## Supernova formation of quark stars
 
-1. think about how to set the process
+1. How to set the process and formulate the problem
 
-2. collaborate with Takami Kuroda 
+2. Simulate the process
 
 ## Collaborations:
 
