@@ -1,12 +1,12 @@
 ---
-# title: "sacra_git"
+title: false
 # layout: default
 excerpt: 
 sitemap: false
 permalink: /sacra_git/
 date: 2024-12-20
 modified: 2024-12-20
-tags: animation
+tags: notes
 # header:
 #     overlay_image: header.png
 #     overlay_filter: 0.1 
