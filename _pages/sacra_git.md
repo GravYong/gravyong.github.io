@@ -98,11 +98,11 @@ if you prefer pull request:
 
 #### Case B: If restrictions are **enabled** (e.g., main branch protection):
 
-1. Go to the GitHub repo page.
-2. Click **“Compare & pull request”**.
-3. Fill in the PR title and description.
-4. Submit and wait for approval by **@kenta kiuchi**.
-5. After approval, click **“Merge pull request”**.
+- Go to the GitHub repo page.
+- Click **“Compare & pull request”**.
+- Fill in the PR title and description.
+- Submit and wait for approval by **@kenta kiuchi**.
+- After approval, click **“Merge pull request”**.
 
 
 ---
