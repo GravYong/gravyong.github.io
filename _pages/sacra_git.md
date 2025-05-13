@@ -1,15 +1,15 @@
 ---
-title: "sacra_git"
+# title: "sacra_git"
 # layout: default
 excerpt: 
 sitemap: false
-permalink: /convection/
+permalink: /sacra_git/
 date: 2024-12-20
 modified: 2024-12-20
 tags: animation
-header:
-    overlay_image: header.png
-    overlay_filter: 0.1 
+# header:
+#     overlay_image: header.png
+#     overlay_filter: 0.1 
 ---
 
 
