@@ -14,7 +14,7 @@ header:
 <hr style="border:1px solid gray">
 
 
-1. The master equations for polar modes of neutron stars with solid crust <a href="https://gravyong.github.io/files/interfacial_mode.nb" style="color: #F48FB1;">[download: ns-mode]</a>
+1. The master equations and von Mises criterion for polar modes of neutron stars with solid crust <a href="https://gravyong.github.io/files/interfacial_mode.nb" style="color: #F48FB1;">[download: ns-mode]</a>
 <span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
 <a href="https://gravyong.github.io/files/von_Mises.nb" style="color: #F48FB1;">[download: ns-mode]</a>
 <span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
