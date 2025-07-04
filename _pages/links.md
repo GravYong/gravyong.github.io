@@ -16,6 +16,8 @@ header:
 
 1. The master equations for polar modes of neutron stars with solid crust <a href="https://gravyong.github.io/files/interfacial_mode.nb" style="color: #F48FB1;">[download: ns-mode]</a>
 <span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
+<a href="https://gravyong.github.io/files/von_Mises.nb" style="color: #F48FB1;">[download: ns-mode]</a>
+<span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
 
 2. Convective stability analysis of massive neutron stars formed in binary mergers <a href="https://gravyong.github.io/convection/" style="color: #F48FB1;">[link: convection_animation]</a>
 <span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
