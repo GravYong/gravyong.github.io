@@ -56,7 +56,7 @@ header:
 <body>
   <!-- Criterion I group -->
   <section>
-    <h3>Criterion I</h3>
+    <h2>Criterion I</h2>
     <figure>
       <video controls>
         <source src="https://gravyong.github.io/assets/videos/APR4_2_4.mp4" type="video/mp4">
@@ -84,7 +84,7 @@ header:
   </section>
   <!-- Criterion II group -->
   <section>
-    <h3>Criterion II</h3>
+    <h2>Criterion II</h2>
     <figure>
       <video controls>
         <source src="https://gravyong.github.io/assets/videos/APR4_CritII.mp4" type="video/mp4">
