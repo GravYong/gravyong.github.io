@@ -53,37 +53,6 @@ header:
     }
   </style>
 </head>
-
-<!-- <body>
-  <figure>
-    <video controls>
-      <source src="https://gravyong.github.io/assets/videos/APR4_2_4.mp4" type="video/mp4">
-    </video>
-    <figcaption>
-      Fig. 1: The time evolution of the Schwarzschild criterion (first column), the Reyleigh-Solberg criterion (the second column), and the Criterion I (third column) in the $x-z$ (first row) and $x-y$ (second row) planes for the model <tt>APR4-135135</tt>. The black dashed line marks the place where the criterion equals zero. The black solid line represents the density contour at restmass density $\rho = 10^{11.5} \, \rm g\,cm^{-3}$.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <video controls>
-      <source src="https://gravyong.github.io/assets/videos/MPA1_1_4.mp4" type="video/mp4">
-    </video>
-    <figcaption>
-      Fig. 2: Same as Fig. 1 but for the model <tt>MPA1-135135</tt>.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <video controls>
-      <source src="https://gravyong.github.io/assets/videos/SLy4_2_5.mp4" type="video/mp4">
-    </video>
-    <figcaption>
-      Fig. 3: Same as Fig. 1 but for the model <tt>SLy4-128128</tt>.
-    </figcaption>
-  </figure>
-
-</body> -->
-
 <body>
   <!-- Criterion I group -->
   <section>
