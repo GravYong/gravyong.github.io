@@ -23,6 +23,9 @@ header:
 3. The master equations for tidal deformability of NSs in massive scalar tensor gravity <a href="https://gravyong.github.io/files/tidal_mstg.nb" style="color: #F48FB1;">[download: tidal-mstg]</a>
 <span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
 
+4. Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries <a href="https://gravyong.github.io/strain/" style="color: #F48FB1;">[link: strain_evolution]</a>
+<span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
+
 
 
 
