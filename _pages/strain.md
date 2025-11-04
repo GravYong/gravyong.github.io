@@ -53,16 +53,16 @@ header:
     }
   </style>
 </head>
+
 <body>
-  <!-- Criterion I group -->
   <section>
-    <h2>Criterion I</h2>
     <figure>
       <video controls>
         <source src="https://gravyong.github.io/assets/videos/strain_evolution.mp4" type="video/mp4">
       </video>
       <figcaption>
-        Fig. 1: The time evolution of the Schwarzschild criterion (first column), the Reyleigh-Solberg criterion (second column), and Criterion I (third column) in the $x\text{-}z$ (first row) and $x\text{-}y$ (second row) planes for the model <tt>APR4-135135</tt>. The black dashed line marks the place where the criterion equals zero. The black solid line represents the density contour at restmass density $\rho = 10^{11.5} \, \mathrm{g\,cm^{-3}}$.
+        The distribution of the strain $\sigma$ for different modes. The white contour lines indicate the place where the strain reaches the breaking strain $\sigma_{\rm break}=0.04$. The companion is located at the direction of $\theta=90\degree$.
       </figcaption>
+    </figure>
   </section>
 </body>
