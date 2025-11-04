@@ -1,9 +1,9 @@
 ---
-title: "convection_animation"
+title: "strain evolution in dynamical tides"
 # layout: default
 excerpt: 
 sitemap: false
-permalink: /convection/
+permalink: /strain/
 date: 2024-12-20
 modified: 2024-12-20
 tags: animation
@@ -11,7 +11,7 @@ header:
     overlay_image: header.png
     overlay_filter: 0.1 
 ---
-# Convective stability analysis of massive neutron stars formed in binary mergers
+# Dynamical tides of stratified neutron stars with solid crusts
 <hr style="border:1px solid gray">
 
 <head>
