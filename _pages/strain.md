@@ -61,7 +61,7 @@ header:
         <source src="https://gravyong.github.io/assets/videos/strain_evolution.mp4" type="video/mp4">
       </video>
       <figcaption>
-        The distribution of the strain $\sigma$ for different modes. The white contour lines indicate the place where the strain reaches the breaking strain $\sigma_{\rm break}=0.04$. The companion is located at the direction of $\theta=90\degree$.
+        Top: The distribution of the strain $\sigma$ for different modes. The white contour lines indicate the place where the strain reaches the breaking strain $\sigma_{\rm break}=0.04$. The companion is located at the direction of $\theta = 90^\circ$. Bottom: The evolution of the strain amplitude as a function of GW frequency.
       </figcaption>
     </figure>
   </section>
