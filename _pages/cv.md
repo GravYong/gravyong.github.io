@@ -1,14 +1,16 @@
 ---
+layout: single
 title: "Curriculum Vitae"
 date: 2022-10-16
 permalink: /cv/
 modified: 2022-10-16
-excerpt:
-tags:
+excerpt: ""
+tags: []
 header:
   overlay_image: header.png
   overlay_filter: 0.1
 ---
+
 
 # My Worldline
 <hr style="border:1px solid gray"> 
@@ -25,13 +27,9 @@ header:
 | 1995         | Hello World!            |                                 | Gulang, Gansu province    | China   |
 
 <br/>
-
 # Full CV
 <hr style="border:1px solid gray"> 
-
 You can see the embedded PDF below or <u><a href="https://gravyong.github.io/cv/Yong.pdf">download it here.</a></u>
-
 <br/>
-
 <embed src="https://gravyong.github.io/cv/Yong.pdf" type="application/pdf" width="100%" height="800px" />
 
