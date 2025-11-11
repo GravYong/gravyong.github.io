@@ -1,14 +1,13 @@
 ---
-layout: single
 title: "Curriculum Vitae"
 date: 2022-10-16
 permalink: /cv/
 modified: 2022-10-16
-excerpt: ""
-tags: []
+excerpt:
+tags:
 header:
-  overlay_image: header.png
-  overlay_filter: 0.1
+    overlay_image: header.png
+    overlay_filter: 0.1 
 ---
 
 
