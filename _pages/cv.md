@@ -11,7 +11,7 @@ header:
 ---
 
 
-<!-- # My Worldline
+# My Worldline
 <hr style="border:1px solid gray"> 
 
 | Time         | Position                | School/Institute                | City                      | Country |
@@ -30,5 +30,5 @@ header:
 <hr style="border:1px solid gray"> 
 You can see the embedded PDF below or <u><a href="https://gravyong.github.io/cv/Yong.pdf">download it here.</a></u>
 <br/>
-<embed src="https://gravyong.github.io/cv/Yong.pdf" type="application/pdf" width="100%" height="800px" /> -->
+<embed src="https://gravyong.github.io/cv/Yong.pdf" type="application/pdf" width="100%" height="800px" />
 
