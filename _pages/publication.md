@@ -25,7 +25,7 @@ I also list my publications below for consistency.
 
 # 2025
 
-1. **Y. Gao**, H. J. Kuan, C. J. Xia, H. O. Silva and M. Shibata, *Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries*, submitted to Physical Review D, <a href="https://arxiv.org/abs/2509.00257" style="color: #F48FB1;">[arXiv]</a>.
+1. **Y. Gao**, H. J. Kuan, C. J. Xia, H. O. Silva and M. Shibata, *Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries*, accepted by Physical Review D, <a href="https://arxiv.org/abs/2509.00257" style="color: #F48FB1;">[arXiv]</a>.
 
 
 2. **Y. Gao**, K. Hayashi, K. Kiuchi, A. T. L. Lam, H. J. Kuan and M. Shibata, *Convective stability analysis of massive neutron stars formed in binary mergers*, submitted to Physical Review D, <a href="https://arxiv.org/abs/2501.19053" style="color: #F48FB1;">[arXiv]</a>.
