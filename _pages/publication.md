@@ -34,10 +34,10 @@ I also list my publications below for consistency.
 *Dependence of postmerger properties on the thermal heating efficiency in neutron star mergers*,
 [Phys. Rev. D **112**, 2](https://journals.aps.org/prd/abstract/10.1103/p6s8-khkw), <a href="https://arxiv.org/abs/2504.08514" style="color: #F48FB1;">[arXiv]</a>.
 
-1. Z. Hu, **Y. Gao** and L. Shao, *Linear analysis of I-C-Love universal relations for neutron stars*,
+4. Z. Hu, **Y. Gao** and L. Shao, *Linear analysis of I-C-Love universal relations for neutron stars*,
 submitted to Phys. Rev. D, <a href="https://arxiv.org/abs/2505.13110" style="color: #F48FB1;">[arXiv]</a>.
 
-1. S. X. Yi, W. Zhao, R. X. Xu, X. F. Wu, G. Stratta, S. Dall'Osso, Y. J. Xu, A. Santangelo, S. Zane and S. N. Zhang, et al. *Prospects for Time-Domain and Multi-Messenger Science with eXTP*, [Sci.China Phys.Mech.Astron. **68**, 11](https://link.springer.com/article/10.1007/s11433-025-2782-2), <a href="https://arxiv.org/abs/2506.08368" style="color: #F48FB1;">[arXiv]</a>.
+5. S. X. Yi, W. Zhao, R. X. Xu, X. F. Wu, G. Stratta, S. Dall'Osso, Y. J. Xu, A. Santangelo, S. Zane and S. N. Zhang, et al. *Prospects for Time-Domain and Multi-Messenger Science with eXTP*, [Sci.China Phys.Mech.Astron. **68**, 11](https://link.springer.com/article/10.1007/s11433-025-2782-2), <a href="https://arxiv.org/abs/2506.08368" style="color: #F48FB1;">[arXiv]</a>.
 
 # 2024 
 
