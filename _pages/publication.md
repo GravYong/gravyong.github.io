@@ -25,10 +25,10 @@ I also list my publications below for consistency.
 
 # 2025
 
-1. **Y. Gao**, H. J. Kuan, C. J. Xia, H. O. Silva and M. Shibata, *Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries*, accepted by Physical Review D, <a href="https://arxiv.org/abs/2509.00257" style="color: #F48FB1;">[arXiv]</a>.
+1. **Y. Gao**, H. J. Kuan, C. J. Xia, H. O. Silva and M. Shibata, *Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries*, [Phys. Rev. D **112**, 123006](https://journals.aps.org/prd/abstract/10.1103/nbk7-8kts), <a href="https://arxiv.org/abs/2509.00257" style="color: #F48FB1;">[arXiv]</a>.
 
 
-2. **Y. Gao**, K. Hayashi, K. Kiuchi, A. T. L. Lam, H. J. Kuan and M. Shibata, *Convective stability analysis of massive neutron stars formed in binary mergers*, submitted to Physical Review D, <a href="https://arxiv.org/abs/2501.19053" style="color: #F48FB1;">[arXiv]</a>.
+2. **Y. Gao**, K. Hayashi, K. Kiuchi, A. T. L. Lam, H. J. Kuan and M. Shibata, *Convective stability analysis of massive neutron stars formed in binary mergers*, accepted by Phys. Rev. D, <a href="https://arxiv.org/abs/2501.19053" style="color: #F48FB1;">[arXiv]</a>.
 
 3. M. Z. Han, **Y. Gao**, K. Kiuchi and M. Shibata,
 *Dependence of postmerger properties on the thermal heating efficiency in neutron star mergers*,
@@ -37,7 +37,7 @@ I also list my publications below for consistency.
 1. Z. Hu, **Y. Gao** and L. Shao, *Linear analysis of I-C-Love universal relations for neutron stars*,
 submitted to Physical Review D, <a href="https://arxiv.org/abs/2505.13110" style="color: #F48FB1;">[arXiv]</a>.
 
-1. S. X. Yi, W. Zhao, R. X. Xu, X. F. Wu, G. Stratta, S. Dall'Osso, Y. J. Xu, A. Santangelo, S. Zane and S. N. Zhang, et al. *Prospects for Time-Domain and Multi-Messenger Science with eXTP*, submitted to SCIENCE CHINA Physics, Mechanics & Astronomy, <a href="https://arxiv.org/abs/2506.08368" style="color: #F48FB1;">[arXiv]</a>.
+1. S. X. Yi, W. Zhao, R. X. Xu, X. F. Wu, G. Stratta, S. Dall'Osso, Y. J. Xu, A. Santangelo, S. Zane and S. N. Zhang, et al. *Prospects for Time-Domain and Multi-Messenger Science with eXTP*, SCIENCE CHINA Physics, Mechanics & Astronomy, <a href="https://arxiv.org/abs/2506.08368" style="color: #F48FB1;">[arXiv]</a>.
 
 # 2024 
 
