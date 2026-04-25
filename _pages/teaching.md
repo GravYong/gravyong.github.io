@@ -5,9 +5,6 @@ permalink: /teaching/
 modified: 2022-10-15
 excerpt:
 tags:
-header:
-    overlay_image: header.png
-    overlay_filter: 0.1 
 ---
 
 # Teaching Assistant

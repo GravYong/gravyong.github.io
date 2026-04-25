@@ -32,8 +32,8 @@
 <meta property="og:title" content="Talks">
 
 
-  <link rel="canonical" href="http://localhost:4000/talks/">
-  <meta property="og:url" content="http://localhost:4000/talks/">
+  <link rel="canonical" href="http://127.0.0.1:4000/talks/">
+  <meta property="og:url" content="http://127.0.0.1:4000/talks/">
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-  <meta property="og:image" content="http://localhost:4000/images/header.png">
+  <meta property="og:image" content="http://127.0.0.1:4000/images/header.png">
 
 
 
@@ -65,7 +65,7 @@
 <!-- end SEO -->
 
 
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yong Gao Feed">
+<link href="http://127.0.0.1:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yong Gao Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -77,22 +77,51 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/main.css">
 
 <meta http-equiv="cleartype" content="on">
     <!-- start custom head snippets -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
+
+<!-- Theme preference: apply before paint to avoid flash -->
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    } catch (e) { /* ignore (private mode, etc.) */ }
+  })();
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<!-- Owner-only mode: ?me=1 unlocks private UI (Like buttons, /liked/);
+     ?me=0 locks back. Flag persists in localStorage. -->
+<script>
+  (function () {
+    try {
+      var u = new URL(window.location.href);
+      var p = u.searchParams.get('me');
+      if (p === '1') {
+        localStorage.setItem('yg-me', '1');
+        u.searchParams.delete('me');
+        history.replaceState({}, '', u.toString());
+      } else if (p === '0') {
+        localStorage.removeItem('yg-me');
+        u.searchParams.delete('me');
+        history.replaceState({}, '', u.toString());
+      }
+      if (localStorage.getItem('yg-me') === '1') {
+        document.documentElement.classList.add('yg-me');
+      }
+    } catch (e) { /* ignore */ }
+  })();
+</script>
+
+
 
 
 <!-- Academicons -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.min.css"/>
-
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/academicons.min.css"/>
 
 <!-- end custom head snippets -->
 
@@ -111,35 +140,72 @@ MathJax.Hub.Config({
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Yong Gao</a></li>
+          
+          <li class="masthead__menu-item masthead__menu-item--lg"><a class="" href="http://127.0.0.1:4000/">Home</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/research/">Research</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/research/">Research</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/teaching/">Teaching</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/publication/">Publications</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/publication/">Publications</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/cv/" title="Curriculum Vitae">CV</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/cv/" title="Curriculum Vitae">CV</a></li>
+            
+            <li class="masthead__menu-item"><a class=" is-active" href="http://127.0.0.1:4000/talks/">Talks</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/talks/">Talks</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/teaching/">Teaching</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/links/">Links</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/posts/">Blog</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/life/">Life</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/daily-arxiv/">arXiv</a></li>
           
+            
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/links/">Links</a></li>
+          
+            
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/life/">Life</a></li>
+          
+          <li class="masthead__menu-item">
+            <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+              <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2M12 19.5v2M4.5 12h-2M21.5 12h-2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M5.2 18.8l1.4-1.4M17.4 6.6l1.4-1.4"/></svg>
+            </button>
+          </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var effective = current || (prefersDark ? 'dark' : 'light');
+      var next = effective === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+    });
+  })();
+</script>
 
     
 
@@ -155,7 +221,7 @@ MathJax.Hub.Config({
 
 
 <div class="page__hero--overlay"
-  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('http://localhost:4000/images/header.png');"
+  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://127.0.0.1:4000/images/header.png');"
 >
   
     <div class="wrapper">
@@ -189,13 +255,13 @@ MathJax.Hub.Config({
 
   <div class="author__avatar">
     
-    	<img src="http://localhost:4000/images/yong-head.png" class="author__avatar" alt="Yong Gao">
+    	<img src="http://127.0.0.1:4000/images/yong-head.png" class="author__avatar" alt="Yong Gao" width="400" height="400" loading="lazy">
     
   </div>
 
   <div class="author__content">
     <h3 class="author__name">Yong Gao</h3>
-    <p class="author__bio">Neutron stars, pulsars, gravitational waves.</p>
+    <p class="author__bio">Neutron stars · numerical relativity · tests of GR</p>
   </div>
 
   <div class="author__urls-wrapper">
@@ -206,7 +272,7 @@ MathJax.Hub.Config({
       
       
       
-        <li><a href="mailto:gaoyong.physics@pku.edu.cn"><i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        <li><a href="mailto:yong.gao@aei.mpg.de"><i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
       
       
       
@@ -254,78 +320,34 @@ MathJax.Hub.Config({
     <meta itemprop="headline" content="Talks">
     
     <meta itemprop="datePublished" content="August 20, 2018">
-    <meta itemprop="dateModified" content="October 15, 2022">
+    <meta itemprop="dateModified" content="April 25, 2026">
 
     <div class="page__inner-wrap">
       
 
       <section class="page__content" itemprop="text">
-        <h1 id="invited-talks">Invited talks</h1>
-<hr style="border:1px solid gray" />
+        <hr style="border:1px solid gray" />
 
 <ul>
-  <li>
-    <p>Binary neutron star mergers: From pre-merger interfacial-mode dynamical tides to post-merger hydrodynamical instabilities, Seminar, <strong>Yangzhou University</strong>, December 2024</p>
-  </li>
-  <li>
-    <p>The structures of neutron stars and observational constraints, Seminar, <strong>Dalian University of Technology</strong>, July 2023</p>
-  </li>
-  <li>
-    <p>Probing neutron star structures with gravitational dynamics, online Seminar, <strong>Yang Zhou University</strong>, September 2022. 
-<!-- <a href="http://arxiv.org/abs/2109.13234" style="color: #F48FB1;">Slides</a> --></p>
-  </li>
-  <li>CuiYing Graduate Student Salon, online Seminar, <strong>Peking University</strong>, February 2021.</li>
-  <li>Deformed neutron stars and their characteristics in electromagnetic and gravitational radiation, online Colloquium, <strong>Max Planck Institut f. Gravitationsphysik</strong>, September 2020.</li>
-  <li>Deformed neutron stars and their characteristics in electromagnetic and gravitational radiation, <strong>University of Tartu</strong>, online Colloquium, October 2020.</li>
+  <li><em>Hydrodynamical instability analysis of massive neutron stars formed in binary mergers</em>, <strong>Workshop on gravitational waves and compact stars</strong>, Purple Mountain Observatory, January 2025.</li>
+  <li><em>Binary neutron star mergers: from pre-merger interfacial-mode dynamical tides to post-merger hydrodynamical instabilities</em>, seminar, <strong>Yangzhou University</strong>, December 2024.</li>
+  <li><em>Probing dense matter inside NSs through free precession and dynamical tides</em>, <strong>Brainstorming workshop: Deciphering the equation of state using gravitational waves from astrophysical sources</strong>, University of Warsaw, Poland, August 2024.</li>
+  <li><em>The structures of neutron stars and observational constraints</em>, seminar, <strong>Dalian University of Technology</strong>, July 2023.</li>
+  <li><em>Probing neutron star structures with gravitational dynamics</em>, online seminar, <strong>Yangzhou University</strong>, September 2022.</li>
+  <li><em>Precession of magnetars and modulations on polarized electromagnetic waves</em>, <strong>Physics Five Universities</strong>, Peking University, China, August 2022.</li>
+  <li><em>Rotation and tidal deformation of NSs in general relativity and massive scalar-tensor gravity</em>, <strong>SKA Pulsar Science Symposium 2022</strong>, Xiangtan, China, August 2022.</li>
+  <li><em>Precession of magnetars: dynamical evolutions and modulations on polarized electromagnetic waves</em>, <strong>FAST/Future Pulsar Symposium 11</strong>, Xiangtan, China, August 2022.</li>
+  <li><em>Rotation, tidal deformation, and oscillation of strangeon stars</em>, <strong>Summer Science Day</strong>, Peking University, Beijing, China, July 2022.</li>
+  <li><em>Precession of magnetars: dynamical evolutions and modulations on polarized electromagnetic waves</em>, <strong>The 60th Anniversary of X-Ray Astronomy</strong>, Beijing, China, June 2022.</li>
+  <li><em>Precession of neutron stars under Lorentz violation: signatures in pulsar and continuous gravitational-wave observations</em>, online, <strong>Ninth Meeting on CPT and Lorentz Symmetry</strong>, Indiana University, Bloomington, USA, May 2022.</li>
+  <li><em>Rotation and deformation of strangeon stars</em>, <strong>FAST/Future Pulsar Symposium 10</strong>, Jinan, China, July 2021.</li>
+  <li><em>Rotation and deformation of strangeon stars</em>, <strong>Gravitation and Relativistic Astrophysics</strong>, Shenyang, China, April 2021.</li>
+  <li><em>CuiYing Graduate Student Salon</em>, online seminar, <strong>Peking University</strong>, February 2021.</li>
+  <li><em>Free precession of neutron stars</em>, <strong>Gravitation and Cosmology Symposium</strong>, Chongqing, China, December 2020.</li>
+  <li><em>Triaxially-deformed freely-precessing neutron stars: continuous electromagnetic and gravitational radiation</em>, <strong>FAST/Future Pulsar Symposium 9</strong>, Xiamen, China, August 2020.</li>
+  <li><em>Deformed neutron stars and their characteristics in electromagnetic and gravitational radiation</em>, online colloquium, <strong>University of Tartu</strong>, October 2020.</li>
+  <li><em>Deformed neutron stars and their characteristics in electromagnetic and gravitational radiation</em>, online colloquium, <strong>Max Planck Institut für Gravitationsphysik</strong>, September 2020.</li>
 </ul>
-
-<hr />
-
-<h1 id="contributed-talks-in-conferences">Contributed talks in conferences</h1>
-<hr style="border:1px solid gray" />
-
-<ul>
-  <li>
-    <p>Hydrodynamical instability analysis of massive neutron stars formed in binary mergers, talk, <strong>Workshop on gravitational waves and compact stars</strong>, Purple Mountain Observatory, January 2025</p>
-  </li>
-  <li>
-    <p>Probing dense matter inside NSs through free precession and dynamical tides, talk, <strong>Brainstorming workshop: Deciphering the equation of state using gravitational waves from astrophysical sources</strong>, University of Warsaw, Poland, August 2024.</p>
-  </li>
-  <li>
-    <p>Precession of magnetars and modulations on polarized electromagnetic waves, talk, <strong>Physics Five Universities</strong>, Peking University, China, August 2022.</p>
-  </li>
-  <li>
-    <p>Rotation and tidal deformation of NSs in General Relativity and massive scalar-tensor gravity, talk, <strong>SKA Pulsar Science Symposium 2022</strong>, Xiangtan, China, August 2022.</p>
-  </li>
-  <li>
-    <p>Precession of magnetars: dynamical evolutions and modulations on polarized electromagnetic waves, talk, <strong>FAST/Future Pulsar Symposium 11</strong>, Xiangtan, China, August 2022.</p>
-  </li>
-  <li>
-    <p>Rotation, tidal deformation, and oscillation of strangeon stars, talk, <strong>Summer Science Day</strong>, Peking University, Beijing, China, July 2022.</p>
-  </li>
-  <li>
-    <p>Precession of magnetars: dynamical evolutions and modulations on polarized electromagnetic waves, talk, <strong>The 60th Anniversary of X-Ray Astronomy</strong>, Beijing, China, June 2022.</p>
-  </li>
-  <li>
-    <p>Precession of neutron stars under Lorentz violation: Signatures in pulsar and continuous gravitational-wave observations, online talk, <strong>Ninth meeting on CPT and Lorentz symmetry</strong>, Indiana University, Bloomington, USA, May, 2022</p>
-  </li>
-  <li>
-    <p>Rotation and deformation of strangeon stars, talk, <strong>FAST/Future Pulsar Symposium 10</strong>, Jinan, China, July 2021.</p>
-  </li>
-  <li>
-    <p>Rotation and deformation of strangeon stars, talk, <strong>Gravitation and Relativistic Astrophysics</strong>, Shenyang, China, April 2021.</p>
-  </li>
-  <li>
-    <p>Free precession of neutron stars, talk, <strong>Gravitation and Cosmology Symposium</strong>, Chongqing, China, December 2020.</p>
-  </li>
-  <li>
-    <p>Triaxially-deformed freely-precessing neutron stars: Continuous electromagnetic and gravitational radiation, <strong>FAST/Future Pulsar Symposium 9</strong>, Xiamen, China, August 2020</p>
-  </li>
-</ul>
-
-<h1 id="group-meeting-presentations">Group meeting presentations</h1>
-<hr style="border:1px solid gray" />
-
 
         
       </section>
@@ -338,7 +360,7 @@ MathJax.Hub.Config({
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-15">October 15, 2022</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-04-25">April 25, 2026</time></p>
         
       </footer>
 
@@ -372,16 +394,16 @@ MathJax.Hub.Config({
       <li><a href="http://github.com/GravYong"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
     
     
-    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    <li><a href="http://127.0.0.1:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2015-2025 Yong Gao. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. <a href="https://github.com/GravYong/gravyong.github.io" rel="nofollow">Visit the repo for this site here</a>.</div>
+<div class="page__footer-copyright">&copy; 2015-2026 Yong Gao. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. <a href="https://github.com/GravYong/gravyong.github.io" rel="nofollow">Visit the repo for this site here</a>.</div>
 
       </footer>
     </div>
 
-    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+    <script src="http://127.0.0.1:4000/assets/js/main.min.js"></script>
 
 
 

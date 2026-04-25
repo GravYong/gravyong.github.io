@@ -1,22 +1,22 @@
 ---
 layout: archive
 permalink: /posts/
-title: "Posts by Year"
-author_profile: true
+title: "Blog"
+author_profile: false
 ---
 
 {% include base_path %}
 
-Browse by:
-<strong><a href="{{ base_path }}{{ site.category_archive.path }}">
-<i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Category
-</a></strong>
-<strong><a href="{{ base_path }}{{ site.tag_archive.path }}">
-<i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags
-</a></strong>
-<strong><a href="{{ base_path }}/posts/">
-<i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Year
-</a></strong>
+<p>Occasional notes on research, reading, and tooling.</p>
+
+<p>Browse by:
+  <strong><a href="{{ base_path }}{{ site.category_archive.path }}" style="color: #52adc8;">
+  <i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Category</a></strong> &middot;
+  <strong><a href="{{ base_path }}{{ site.tag_archive.path }}" style="color: #52adc8;">
+  <i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags</a></strong> &middot;
+  <strong><a href="{{ base_path }}/posts/" style="color: #52adc8;">
+  <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Year</a></strong>
+</p>
 
 {% capture written_year %}'None'{% endcapture %}
 {% for post in site.posts %}

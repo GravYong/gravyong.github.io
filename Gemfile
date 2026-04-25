@@ -33,5 +33,6 @@ end
 
 gem "webrick", "~> 1.7"
 gem 'faraday-retry'
+gem "csv"  # no longer a default gem in Ruby 3.4+ — pin explicitly
 
 

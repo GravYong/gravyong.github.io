@@ -7,9 +7,6 @@ main:
 - title: Research
   url: /research/
 
-- title: Teaching
-  url: /teaching/
-
 - title: Publications
   url: /publication/
 
@@ -19,6 +16,15 @@ main:
 
 - title: Talks
   url: /talks/
+
+- title: Teaching
+  url: /teaching/
+
+- title: Blog
+  url: /posts/
+
+- title: arXiv
+  url: /daily-arxiv/
 
 - title: Links
   url: /links/

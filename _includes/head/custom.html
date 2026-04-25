@@ -1,10 +1,53 @@
 <!-- start custom head snippets -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
+
+<!-- Theme preference: apply before paint to avoid flash -->
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    } catch (e) { /* ignore (private mode, etc.) */ }
+  })();
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<!-- Owner-only mode: ?me=1 unlocks private UI (Like buttons, /liked/);
+     ?me=0 locks back. Flag persists in localStorage. -->
+<script>
+  (function () {
+    try {
+      var u = new URL(window.location.href);
+      var p = u.searchParams.get('me');
+      if (p === '1') {
+        localStorage.setItem('yg-me', '1');
+        u.searchParams.delete('me');
+        history.replaceState({}, '', u.toString());
+      } else if (p === '0') {
+        localStorage.removeItem('yg-me');
+        u.searchParams.delete('me');
+        history.replaceState({}, '', u.toString());
+      }
+      if (localStorage.getItem('yg-me') === '1') {
+        document.documentElement.classList.add('yg-me');
+      }
+    } catch (e) { /* ignore */ }
+  })();
+</script>
+
+{% if page.mathjax %}
+<!-- MathJax 3 (async, loaded only on pages with mathjax: true) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
 {% if page.jsxgraph %}
 <!-- JSXGraph -->
 <script type="text/javascript" src="{{ site.url }}/assets/js/vendor/jsxgraphcore.js"></script>
@@ -17,7 +60,5 @@ MathJax.Hub.Config({
 {% endif %}
 <!-- Academicons -->
 <link rel="stylesheet" href="{{ site.url }}/assets/css/academicons.min.css"/>
-
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->

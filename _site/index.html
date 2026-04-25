@@ -19,7 +19,7 @@
 
  
 
-<title>About me - Yong Gao</title>
+<title>Yong Gao - Yong Gao</title>
 
 
 
@@ -29,21 +29,21 @@
 
 <meta property="og:locale" content="China">
 <meta property="og:site_name" content="Yong Gao">
-<meta property="og:title" content="About me">
+<meta property="og:title" content="Yong Gao">
 
 
-  <link rel="canonical" href="http://localhost:4000/">
-  <meta property="og:url" content="http://localhost:4000/">
-
-
-
+  <link rel="canonical" href="http://127.0.0.1:4000/">
+  <meta property="og:url" content="http://127.0.0.1:4000/">
 
 
 
 
 
 
-  <meta property="og:image" content="http://localhost:4000/images/header.png">
+
+
+
+  <meta property="og:image" content="http://127.0.0.1:4000/images/header.png">
 
 
 
@@ -62,7 +62,7 @@
 <!-- end SEO -->
 
 
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yong Gao Feed">
+<link href="http://127.0.0.1:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yong Gao Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -74,22 +74,51 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/main.css">
 
 <meta http-equiv="cleartype" content="on">
     <!-- start custom head snippets -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
+
+<!-- Theme preference: apply before paint to avoid flash -->
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    } catch (e) { /* ignore (private mode, etc.) */ }
+  })();
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<!-- Owner-only mode: ?me=1 unlocks private UI (Like buttons, /liked/);
+     ?me=0 locks back. Flag persists in localStorage. -->
+<script>
+  (function () {
+    try {
+      var u = new URL(window.location.href);
+      var p = u.searchParams.get('me');
+      if (p === '1') {
+        localStorage.setItem('yg-me', '1');
+        u.searchParams.delete('me');
+        history.replaceState({}, '', u.toString());
+      } else if (p === '0') {
+        localStorage.removeItem('yg-me');
+        u.searchParams.delete('me');
+        history.replaceState({}, '', u.toString());
+      }
+      if (localStorage.getItem('yg-me') === '1') {
+        document.documentElement.classList.add('yg-me');
+      }
+    } catch (e) { /* ignore */ }
+  })();
+</script>
+
+
 
 
 <!-- Academicons -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.min.css"/>
-
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/academicons.min.css"/>
 
 <!-- end custom head snippets -->
 
@@ -108,35 +137,72 @@ MathJax.Hub.Config({
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Yong Gao</a></li>
+          
+          <li class="masthead__menu-item masthead__menu-item--lg"><a class=" is-active" href="http://127.0.0.1:4000/">Home</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/research/">Research</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/research/">Research</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/teaching/">Teaching</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/publication/">Publications</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/publication/">Publications</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/cv/" title="Curriculum Vitae">CV</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/cv/" title="Curriculum Vitae">CV</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/talks/">Talks</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/talks/">Talks</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/teaching/">Teaching</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/links/">Links</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/posts/">Blog</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/life/">Life</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/daily-arxiv/">arXiv</a></li>
           
+            
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/links/">Links</a></li>
+          
+            
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/life/">Life</a></li>
+          
+          <li class="masthead__menu-item">
+            <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+              <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2M12 19.5v2M4.5 12h-2M21.5 12h-2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M5.2 18.8l1.4-1.4M17.4 6.6l1.4-1.4"/></svg>
+            </button>
+          </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var effective = current || (prefersDark ? 'dark' : 'light');
+      var next = effective === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+    });
+  })();
+</script>
 
     
 
@@ -152,13 +218,13 @@ MathJax.Hub.Config({
 
 
 <div class="page__hero--overlay"
-  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://localhost:4000/images/header.png');"
+  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://127.0.0.1:4000/images/header.png');"
 >
   
     <div class="wrapper">
       <h1 class="page__title" itemprop="headline">
         
-          About me
+          Yong Gao
 
         
       </h1>
@@ -186,13 +252,13 @@ MathJax.Hub.Config({
 
   <div class="author__avatar">
     
-    	<img src="http://localhost:4000/images/yong-head.png" class="author__avatar" alt="Yong Gao">
+    	<img src="http://127.0.0.1:4000/images/yong-head.png" class="author__avatar" alt="Yong Gao" width="400" height="400" loading="lazy">
     
   </div>
 
   <div class="author__content">
     <h3 class="author__name">Yong Gao</h3>
-    <p class="author__bio">Neutron stars, pulsars, gravitational waves.</p>
+    <p class="author__bio">Neutron stars · numerical relativity · tests of GR</p>
   </div>
 
   <div class="author__urls-wrapper">
@@ -203,7 +269,7 @@ MathJax.Hub.Config({
       
       
       
-        <li><a href="mailto:gaoyong.physics@pku.edu.cn"><i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        <li><a href="mailto:yong.gao@aei.mpg.de"><i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
       
       
       
@@ -248,7 +314,7 @@ MathJax.Hub.Config({
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="About me">
+    <meta itemprop="headline" content="Yong Gao">
     
     
     
@@ -257,13 +323,63 @@ MathJax.Hub.Config({
       
 
       <section class="page__content" itemprop="text">
-        <p class="align-right" style="width: 400px"><img src="http://localhost:4000/images/yong_front.png" alt="" /></p>
+        <p>I’m a postdoctoral researcher in the <a href="https://www.aei.mpg.de/comp-rel-astro">Computational Relativistic Astrophysics group</a> led by <a href="https://www2.yukawa.kyoto-u.ac.jp/~masaru.shibata/indexj.html">Masaru Shibata</a> at the <a href="https://www.aei.mpg.de/2772/de">Albert Einstein Institute</a>, Potsdam, working on <strong>neutron-star physics</strong> and <strong>strong-field tests of gravity</strong>. See the <a href="http://127.0.0.1:4000/research/">research</a>, <a href="http://127.0.0.1:4000/publication/">publications</a>, and <a href="http://127.0.0.1:4000/Links/">links</a> pages for more.</p>
 
-<p>Welcome to my website! I am currently a postdoctoral researcher in the <a href="https://www.aei.mpg.de/comp-rel-astro">Computational Relativistic Astrophysics group</a> led by <a href="https://www2.yukawa.kyoto-u.ac.jp/~masaru.shibata/indexj.html">Masaru Shibata</a> at the <a href="https://www.aei.mpg.de/2772/de">Albert Einstein Institute</a> in Potsdam.</p>
+<h2 class="home-section">Recent work</h2>
+<hr style="border:1px solid gray" />
 
-<p>Before this postdoc, I was a PhD student in the <a href="https://kiaagravity.github.io/about/">Gravitational Astrophysics group</a> led by <a href="http://friendshao.github.io/about/">Lijing Shao</a> at Peking University. I was also a member of the <a href="https://psr.pku.edu.cn/">pulsar group</a> at Peking University.</p>
+<div class="paper-spotlight">
+  <div class="paper-spotlight__tag">New · 2026</div>
+  <h3 class="paper-spotlight__title"><a href="http://127.0.0.1:4000/convection/">Convective stability of massive neutron stars formed in binary mergers</a></h3>
+  <p class="paper-spotlight__venue">Y. Gao, K. Hayashi, K. Kiuchi, A. T.-L. Lam, H.-J. Kuan, M. Shibata — Phys. Rev. D <strong>113</strong>, 023011 (2026)</p>
+  <p class="paper-spotlight__summary is-clamped">We run fully general-relativistic hydrodynamics simulations of binary neutron-star mergers out to 100 ms post-merger and derive — then apply for the first time — convective-stability criteria for hot, differentially rotating relativistic stars that include both buoyancy and rotation. The remnant massive neutron stars show no large-scale convective instability: entropy and angular momentum both increase outward, and rotation stabilizes regions that the Schwarzschild criterion would call unstable. Mode analysis reveals no observable inertial modes after the quadrupolar <em>f</em>-modes damp, while the persistent <em>m</em>=1 one-armed mode correlates strongly with violations of linear-momentum conservation — suggesting it may be numerical rather than physical.</p>
+  <button type="button" class="paper-spotlight__more" aria-expanded="false">Show more</button>
+  <p class="paper-spotlight__links">
+    <a class="btn" href="https://doi.org/10.1103/w8gq-3d54">Paper</a>
+    <a class="btn" href="https://arxiv.org/abs/2501.19053" style="color: #F48FB1;">arXiv</a>
+    <a class="btn" href="http://127.0.0.1:4000/convection/">Watch the simulations →</a>
+  </p>
+</div>
 
-<p>My research interests focus on compact stars and strong-field gravity, with a current emphasis on neutron stars and tests of strong-field gravity. Please visit my <a href="http://localhost:4000/research/">research</a> page for more detailed information about my research interests. Additionally, you can check out my <a href="http://localhost:4000/publication/">publication</a> page for a list of my relevant publications and works in progress.</p>
+<div class="paper-spotlight">
+  <div class="paper-spotlight__tag">Recent · 2025</div>
+  <h3 class="paper-spotlight__title"><a href="http://127.0.0.1:4000/strain/">Nonradial oscillations of stratified neutron stars with solid crusts</a></h3>
+  <p class="paper-spotlight__venue">Y. Gao, H.-J. Kuan, C.-J. Xia, H. O. Silva, M. Shibata — Phys. Rev. D <strong>112</strong>, 123006 (2025)</p>
+  <p class="paper-spotlight__summary is-clamped">We model the dynamical tide of an inspiraling neutron star as a set of driven harmonic oscillators whose natural frequencies are the quasinormal modes of a fully relativistic stellar model with a solid crust and compositional stratification. Stratification erases the canonical crust–core interface mode and replaces it with compositional gravity modes anchored in outer-core buoyancy; meanwhile, the <em>f</em>-mode and core <em>g</em>-mode can leak into the crust under a penetration criterion we derive. The headline result for multimessenger observations: both resonant <em>g</em>-mode forcing and nonresonant <em>f</em>- and crustal-shear-mode driving can overstress the crust before merger, potentially channeling energy into the magnetosphere and powering electromagnetic precursors.</p>
+  <button type="button" class="paper-spotlight__more" aria-expanded="false">Show more</button>
+  <p class="paper-spotlight__links">
+    <a class="btn" href="https://doi.org/10.1103/nbk7-8kts">Paper</a>
+    <a class="btn" href="https://arxiv.org/abs/2509.00257" style="color: #F48FB1;">arXiv</a>
+    <a class="btn" href="http://127.0.0.1:4000/strain/">Watch the crust-strain evolution →</a>
+  </p>
+</div>
+
+<h2 class="home-section">From the blog</h2>
+<hr style="border:1px solid gray" />
+
+<article class="home-post">
+    <h3 class="home-post__title"><a href="http://127.0.0.1:4000/notes/welcome/">Welcome</a></h3>
+    <p class="home-post__meta">April 24, 2026</p>
+    <p class="home-post__excerpt">A short note on what this blog is, and what it isn’t.
+</p>
+    <p><a class="btn" href="http://127.0.0.1:4000/notes/welcome/">Read →</a></p>
+  </article>
+
+<p><a href="http://127.0.0.1:4000/posts/">All posts →</a></p>
+
+<script>
+(function () {
+  document.querySelectorAll('.paper-spotlight__more').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var summary = btn.previousElementSibling;
+      if (!summary || !summary.classList.contains('paper-spotlight__summary')) return;
+      var nowClamped = summary.classList.toggle('is-clamped');
+      btn.textContent = nowClamped ? 'Show more' : 'Show less';
+      btn.setAttribute('aria-expanded', nowClamped ? 'false' : 'true');
+    });
+  });
+})();
+</script>
 
 
         
@@ -309,16 +425,16 @@ MathJax.Hub.Config({
       <li><a href="http://github.com/GravYong"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
     
     
-    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    <li><a href="http://127.0.0.1:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2015-2025 Yong Gao. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. <a href="https://github.com/GravYong/gravyong.github.io" rel="nofollow">Visit the repo for this site here</a>.</div>
+<div class="page__footer-copyright">&copy; 2015-2026 Yong Gao. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. <a href="https://github.com/GravYong/gravyong.github.io" rel="nofollow">Visit the repo for this site here</a>.</div>
 
       </footer>
     </div>
 
-    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+    <script src="http://127.0.0.1:4000/assets/js/main.min.js"></script>
 
 
 

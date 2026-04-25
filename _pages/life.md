@@ -5,9 +5,6 @@ permalink: /life/
 modified: 2018-08-07
 excerpt:
 tags:
-header:
-   overlay_image: header.png
-   overlay_filter: 0.3
 ---
 
 I love novels and movies. 

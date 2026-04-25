@@ -96,8 +96,8 @@ $google-scholar-color       : #4285f4;
 $link-color                 : $info-color;
 $link-color-hover           : mix(#000, $link-color, 25%);
 $link-color-visited         : mix(#fff, $link-color, 25%);
-$masthead-link-color        : $info-color;
-$masthead-link-color-hover  : mix(#000, $link-color, 25%);
+$masthead-link-color        : #555;
+$masthead-link-color-hover  : $info-color;
 
 
 /*
@@ -124,11 +124,11 @@ $right-sidebar-width-wide   : 400px;
 $susy: (
   columns: 12,
   // column-width: 90px,
-  gutters: 1/4,
+  gutters: 0.25,
   math: fluid,
   output: float,
   gutter-position: after,
-  container: $large,
+  container: $x-large,
   global-box-sizing: border-box,
   // debug: (
   //   image: show,

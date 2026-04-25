@@ -19,7 +19,7 @@
 
  
 
-<title>Research Interests - Yong Gao</title>
+<title>Research - Yong Gao</title>
 
 
 
@@ -29,21 +29,21 @@
 
 <meta property="og:locale" content="China">
 <meta property="og:site_name" content="Yong Gao">
-<meta property="og:title" content="Research Interests">
+<meta property="og:title" content="Research">
 
 
-  <link rel="canonical" href="http://localhost:4000/research/">
-  <meta property="og:url" content="http://localhost:4000/research/">
-
-
-
+  <link rel="canonical" href="http://127.0.0.1:4000/research/">
+  <meta property="og:url" content="http://127.0.0.1:4000/research/">
 
 
 
 
 
 
-  <meta property="og:image" content="http://localhost:4000/images/header.png">
+
+
+
+  <meta property="og:image" content="http://127.0.0.1:4000/images/header.png">
 
 
 
@@ -65,7 +65,7 @@
 <!-- end SEO -->
 
 
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yong Gao Feed">
+<link href="http://127.0.0.1:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yong Gao Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -77,22 +77,63 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/main.css">
 
 <meta http-equiv="cleartype" content="on">
     <!-- start custom head snippets -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
+
+<!-- Theme preference: apply before paint to avoid flash -->
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    } catch (e) { /* ignore (private mode, etc.) */ }
+  })();
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<!-- Owner-only mode: ?me=1 unlocks private UI (Like buttons, /liked/);
+     ?me=0 locks back. Flag persists in localStorage. -->
+<script>
+  (function () {
+    try {
+      var u = new URL(window.location.href);
+      var p = u.searchParams.get('me');
+      if (p === '1') {
+        localStorage.setItem('yg-me', '1');
+        u.searchParams.delete('me');
+        history.replaceState({}, '', u.toString());
+      } else if (p === '0') {
+        localStorage.removeItem('yg-me');
+        u.searchParams.delete('me');
+        history.replaceState({}, '', u.toString());
+      }
+      if (localStorage.getItem('yg-me') === '1') {
+        document.documentElement.classList.add('yg-me');
+      }
+    } catch (e) { /* ignore */ }
+  })();
+</script>
+
+
+<!-- MathJax 3 (async, loaded only on pages with mathjax: true) -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 
 <!-- Academicons -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.min.css"/>
-
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/academicons.min.css"/>
 
 <!-- end custom head snippets -->
 
@@ -111,35 +152,72 @@ MathJax.Hub.Config({
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Yong Gao</a></li>
+          
+          <li class="masthead__menu-item masthead__menu-item--lg"><a class="" href="http://127.0.0.1:4000/">Home</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/research/">Research</a></li>
+            
+            <li class="masthead__menu-item"><a class=" is-active" href="http://127.0.0.1:4000/research/">Research</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/teaching/">Teaching</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/publication/">Publications</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/publication/">Publications</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/cv/" title="Curriculum Vitae">CV</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/cv/" title="Curriculum Vitae">CV</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/talks/">Talks</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/talks/">Talks</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/teaching/">Teaching</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/links/">Links</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/posts/">Blog</a></li>
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/life/">Life</a></li>
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/daily-arxiv/">arXiv</a></li>
           
+            
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/links/">Links</a></li>
+          
+            
+            
+            <li class="masthead__menu-item"><a class="" href="http://127.0.0.1:4000/life/">Life</a></li>
+          
+          <li class="masthead__menu-item">
+            <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+              <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2M12 19.5v2M4.5 12h-2M21.5 12h-2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M5.2 18.8l1.4-1.4M17.4 6.6l1.4-1.4"/></svg>
+            </button>
+          </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var effective = current || (prefersDark ? 'dark' : 'light');
+      var next = effective === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+    });
+  })();
+</script>
 
     
 
@@ -155,13 +233,13 @@ MathJax.Hub.Config({
 
 
 <div class="page__hero--overlay"
-  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://localhost:4000/images/header.png');"
+  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://127.0.0.1:4000/images/header.png');"
 >
   
     <div class="wrapper">
       <h1 class="page__title" itemprop="headline">
         
-          Research Interests
+          Research
 
         
       </h1>
@@ -189,13 +267,13 @@ MathJax.Hub.Config({
 
   <div class="author__avatar">
     
-    	<img src="http://localhost:4000/images/yong-head.png" class="author__avatar" alt="Yong Gao">
+    	<img src="http://127.0.0.1:4000/images/yong-head.png" class="author__avatar" alt="Yong Gao" width="400" height="400" loading="lazy">
     
   </div>
 
   <div class="author__content">
     <h3 class="author__name">Yong Gao</h3>
-    <p class="author__bio">Neutron stars, pulsars, gravitational waves.</p>
+    <p class="author__bio">Neutron stars · numerical relativity · tests of GR</p>
   </div>
 
   <div class="author__urls-wrapper">
@@ -206,7 +284,7 @@ MathJax.Hub.Config({
       
       
       
-        <li><a href="mailto:gaoyong.physics@pku.edu.cn"><i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        <li><a href="mailto:yong.gao@aei.mpg.de"><i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
       
       
       
@@ -251,27 +329,44 @@ MathJax.Hub.Config({
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Research Interests">
+    <meta itemprop="headline" content="Research">
     
     <meta itemprop="datePublished" content="July 17, 2011">
-    <meta itemprop="dateModified" content="August 07, 2018">
+    <meta itemprop="dateModified" content="April 25, 2026">
 
     <div class="page__inner-wrap">
       
 
       <section class="page__content" itemprop="text">
-        <h1 id="neutron-stars">Neutron stars</h1>
+        <p>Neutron stars are the densest objects without event horizons. Their interiors compress nuclear matter well beyond the densities reached in atomic nuclei, and their gravitational fields are strong enough that general relativity is the minimum theoretical commitment required to describe them. I use that extremity as leverage. Most of my work lives in two connected areas.</p>
+
+<h1 id="neutron-star-physics">Neutron-star physics</h1>
 <hr style="border:1px solid gray" />
 
-<p>Neutron stars (NSs) are the most compact objects known to exist without event horizons, and they serve as extreme laboratories for studying super-dense nuclear matter. To provide a realistic matter description, we need to account for supranuclear matter physics, superfluidity/superconductivity, strong magnetic fields, and elasticity, among other factors. Therefore, understanding the composition and state of matter under extreme conditions inside NSs presents a significant challenge in fundamental physics and astrophysics.</p>
+<p>Understanding what dense matter does inside a neutron star and how that physics imprints itself on signals we can measure. I alternate between <strong>analytical modelling</strong> (stellar-structure equations, relativistic linear perturbation theory for oscillation modes, elastic-crust formalism) and <strong>3D numerical-relativity simulations</strong> of binary mergers with the <a href="https://www.aei.mpg.de/comp-rel-astro">Computational Relativistic Astrophysics group</a> at AEI. For observational questions I work with pulsar timing data and with hierarchical Bayesian methods for population-level inference from gravitational-wave catalogs.</p>
 
-<p>My research focuses on studying the gravitational dynamics of systems involving NSs and extracting physical properties related to different aspects of dense matter from gravitational waves (GWs) and pulsars’ electromagnetic radiation.</p>
+<ul>
+  <li><strong>Binary mergers and post-merger remnants.</strong> Hypermassive remnants are hot, differentially rotating, and right on the edge of collapse. I study their hydrodynamical and thermal structure and how that shapes the postmerger gravitational-wave signal, using full numerical relativity across a range of equations of state. Companion simulation movies live on the <a href="http://127.0.0.1:4000/convection/">convection page</a>.</li>
+  <li><strong>Oscillation modes and tidal resonances.</strong> A neutron star’s equation of state controls the spectrum of modes its interior can support. I characterise those modes for stratified stars with solid crusts, study how resonant and non-resonant tidal excitation deposits energy into the crust, and ask when the resulting elastic strain can break the crust and seed electromagnetic precursors. The <a href="http://127.0.0.1:4000/strain/">crust-strain page</a> has animations of this process.</li>
+  <li><strong>Universal relations for neutron stars.</strong> EOS-insensitive relations among bulk neutron-star quantities let one cancel the equation-of-state dependence of one observable against another. I derive such relations and work out when they hold or break.</li>
+  <li><strong>Pulsars, magnetars, and precession.</strong> The complementary electromagnetic view: spin-down, free precession, and polarisation modulations trace a neutron star’s shape, elasticity, and magnetic geometry, and occasionally reveal features (like a freely precessing magnetar) that directly constrain interior physics.</li>
+  <li><strong>Exotic compact-object models.</strong> What if some of the “neutron stars” we observe aren’t ordinary neutron stars? Quark-star and strangeon-star models remain viable within current constraints and predict subtly different mass–radius relations, oscillation spectra, and gravitational-wave signatures.</li>
+</ul>
 
-<h1 id="gravity-tests-in-the-strong-field-regime-of-compact-objects">Gravity tests in the strong-field regime of compact objects</h1>
+<h1 id="tests-of-strong-field-gravity">Tests of strong-field gravity</h1>
 <hr style="border:1px solid gray" />
 
-<p>General Relativity (GR) describes gravity by means of geometry of spacetime. Theoretically, it is incompatible with quantum theory and predicts spacetime singularities under generic conditions. Observationally, the unknown dark matter and dark energy take up 95% energy content of our Universe, which may indicate that gravity is in fact something beyond GR. These fundamental questions motivate us to test GR and our ultimate goal is to see whether it will fail in regions of the parameter space that are accessible to our experiments or observations.</p>
+<p>Using compact objects as laboratories to look for departures from general relativity that are invisible in the weak-field regime. Depending on the theory, the work involves deriving <strong>modified stellar-structure and perturbation equations</strong>, computing the resulting <strong>post-Newtonian waveform corrections</strong>, or propagating them through <strong>full numerical-relativity simulations</strong>. Observational constraints come from X-ray pulsar pulse profiles and from gravitational-wave catalogs.</p>
 
+<ul>
+  <li><strong>Scalarised neutron stars in modified gravity.</strong> Above a critical compactness, neutron stars in scalar-tensor and scalar-Gauss-Bonnet theories pick up a non-trivial scalar field that changes their structure, tidal deformability, and pulse-profile appearance.</li>
+  <li><strong>Beyond-GR waveform corrections.</strong> Additional propagating degrees of freedom produce dipole radiation on top of GR’s quadrupole and modify the inspiral phasing. Full numerical-relativity simulations of mergers in modified gravity also give access to universal relations that survive beyond GR.</li>
+  <li><strong>Lorentz-violation signatures.</strong> Minimal Standard-Model-Extension coefficients alter how a rotating, deformed neutron star precesses — and therefore the continuous gravitational-wave spectrum and pulsar-timing signatures it leaves behind.</li>
+</ul>
+
+<hr />
+
+<p>The <a href="http://127.0.0.1:4000/publication/">publications page</a> has the full chronological list. The <a href="http://127.0.0.1:4000/convection/">convection</a> and <a href="http://127.0.0.1:4000/strain/">crust-strain</a> pages host the numerical-simulation and mode-excitation animations that accompany two recent papers.</p>
 
         
       </section>
@@ -284,7 +379,7 @@ MathJax.Hub.Config({
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-08-07">August 07, 2018</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-04-25">April 25, 2026</time></p>
         
       </footer>
 
@@ -318,16 +413,16 @@ MathJax.Hub.Config({
       <li><a href="http://github.com/GravYong"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
     
     
-    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    <li><a href="http://127.0.0.1:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2015-2025 Yong Gao. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. <a href="https://github.com/GravYong/gravyong.github.io" rel="nofollow">Visit the repo for this site here</a>.</div>
+<div class="page__footer-copyright">&copy; 2015-2026 Yong Gao. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. <a href="https://github.com/GravYong/gravyong.github.io" rel="nofollow">Visit the repo for this site here</a>.</div>
 
       </footer>
     </div>
 
-    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+    <script src="http://127.0.0.1:4000/assets/js/main.min.js"></script>
 
 
 

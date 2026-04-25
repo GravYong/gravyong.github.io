@@ -5,9 +5,6 @@ permalink: /cv/
 modified: 2022-10-16
 excerpt:
 tags:
-header:
-    overlay_image: header.png
-    overlay_filter: 0.1 
 ---
 
 

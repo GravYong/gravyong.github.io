@@ -5,9 +5,6 @@ excerpt:
 tags: []
 date: 2024-12-20
 modified: 2024-12-20
-header:
-    overlay_image: header.png
-    overlay_filter: 0.1 
 ---
 
 # Data release, public code, and animations
