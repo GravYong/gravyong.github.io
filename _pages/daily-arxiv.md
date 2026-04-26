@@ -1734,7 +1734,9 @@ Rebuilt 2026-04-25 00:23 UTC · 222 candidates over the past 7 days · corpus: 1
   function refresh() {
     var likedIds = load().map(function (x) { return typeof x === 'string' ? x : x.id; });
     document.querySelectorAll('.arxiv-like-btn[data-arxiv-id]').forEach(function (btn) {
-      var on = likedIds.indexOf(btn.dataset.arxivId) !== -1;
+      var inLocal = likedIds.indexOf(btn.dataset.arxivId) !== -1;
+      var inServer = btn.dataset.serverLiked === '1';
+      var on = inLocal || inServer;
       btn.classList.toggle('is-liked', on);
       btn.textContent = on ? '★ Liked' : '★ Like';
     });
@@ -1743,6 +1745,8 @@ Rebuilt 2026-04-25 00:23 UTC · 222 candidates over the past 7 days · corpus: 1
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.arxiv-like-btn[data-arxiv-id]');
     if (!btn) return;
+    // Server-committed papers can't be unliked from the browser.
+    if (btn.dataset.serverLiked === '1') return;
     var id = btn.dataset.arxivId;
     var liked = load();
     var idx = liked.findIndex(function (x) { return (typeof x === 'string' ? x : x.id) === id; });

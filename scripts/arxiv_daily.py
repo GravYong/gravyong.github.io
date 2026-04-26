@@ -36,10 +36,10 @@ INSPIRE_AUTHOR = "Yong.Gao.1"
 ARXIV_CATS = ["astro-ph.HE", "gr-qc", "nucl-th"]
 DAYS_BACK = 7
 MAX_RESULTS_PER_QUERY = 500
-TOP_N = 100
+TOP_N = 50
 
 TOP_COLLABORATORS = 10
-PAPERS_PER_COLLAB = 15
+PAPERS_PER_COLLAB = 30
 LIKED_WEIGHT = 3            # how many corpus copies each liked paper contributes
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -259,6 +259,7 @@ def score_profile(candidates, corpus_with_weights):
 def render_page(papers, scores, top_n, n_candidates, n_corpus, n_liked):
     now = datetime.now(timezone.utc)
     scored = sorted(zip(scores, papers), key=lambda t: t[0], reverse=True)[:top_n]
+    liked_ids = {s.get("id") for s in load_liked_papers() if s.get("id")}
 
     head = [
         "---",
@@ -288,6 +289,12 @@ def render_page(papers, scores, top_n, n_candidates, n_corpus, n_liked):
             "category": p["primary_category"],
         }, ensure_ascii=False)
         payload_attr = html.escape(payload, quote=True)
+        is_saved = p["id"] in liked_ids
+        btn_class = "arxiv-like-btn yg-private is-liked" if is_saved else "arxiv-like-btn yg-private"
+        btn_attrs = f'data-arxiv-id="{p["id"]}" data-payload="{payload_attr}"'
+        if is_saved:
+            btn_attrs += ' data-server-liked="1"'
+        btn_text = "★ Liked" if is_saved else "★ Like"
         body.extend([
             f'<article class="arxiv-item" data-arxiv-id="{p["id"]}">',
             f'  <h3 class="arxiv-item__title"><a href="https://arxiv.org/abs/{p["id"]}">{html.escape(p["title"])}</a></h3>',
@@ -302,7 +309,7 @@ def render_page(papers, scores, top_n, n_candidates, n_corpus, n_liked):
             f'  </details>',
             '  <p class="arxiv-item__actions">',
             f'    <a class="arxiv-action-link" href="https://arxiv.org/pdf/{p["id"]}.pdf" target="_blank" rel="noopener">PDF</a>',
-            f'    <button type="button" class="arxiv-like-btn yg-private" data-arxiv-id="{p["id"]}" data-payload="{payload_attr}">★ Like</button>',
+            f'    <button type="button" class="{btn_class}" {btn_attrs}>{btn_text}</button>',
             "  </p>",
             "</article>",
             "",
@@ -341,7 +348,9 @@ def render_page(papers, scores, top_n, n_candidates, n_corpus, n_liked):
   function refresh() {
     var likedIds = load().map(function (x) { return typeof x === 'string' ? x : x.id; });
     document.querySelectorAll('.arxiv-like-btn[data-arxiv-id]').forEach(function (btn) {
-      var on = likedIds.indexOf(btn.dataset.arxivId) !== -1;
+      var inLocal = likedIds.indexOf(btn.dataset.arxivId) !== -1;
+      var inServer = btn.dataset.serverLiked === '1';
+      var on = inLocal || inServer;
       btn.classList.toggle('is-liked', on);
       btn.textContent = on ? '★ Liked' : '★ Like';
     });
@@ -350,6 +359,8 @@ def render_page(papers, scores, top_n, n_candidates, n_corpus, n_liked):
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.arxiv-like-btn[data-arxiv-id]');
     if (!btn) return;
+    // Server-committed papers can't be unliked from the browser.
+    if (btn.dataset.serverLiked === '1') return;
     var id = btn.dataset.arxivId;
     var liked = load();
     var idx = liked.findIndex(function (x) { return (typeof x === 'string' ? x : x.id) === id; });
