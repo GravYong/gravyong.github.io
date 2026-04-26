@@ -15,3 +15,6 @@
 *.log
 *.out
 *.toc
+
+# Untracked CV build outputs
+_site/cv/Yong_Chinese.pdf
