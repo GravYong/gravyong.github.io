@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Bundler / Ruby (system Ruby 2.6 + user-install bundler)
+/.bundle/
+/vendor/
+
+# Jekyll
+.jekyll-cache/
+.jekyll-metadata
+
+# TeX intermediates
+*.xdv
+*.aux
+*.log
+*.out
+*.toc
