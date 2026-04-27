@@ -1,97 +1,129 @@
 #!/usr/bin/env python3
 """
 Daily arXiv feed — ranked against your INSPIRE corpus, your top
-collaborators, and any papers you've liked.
+collaborators, a few extra physicists, and any papers you've liked.
 
 Pipeline
 --------
 1. Fetch your papers from INSPIRE-HEP.
-2. Pick your top-N most frequent collaborators, fetch their recent papers.
+2. Pick your top-N most frequent collaborators, plus a hand-picked list
+   of extra physicists (resolved name → BAI), and fetch their recent papers.
 3. If `_data/liked_arxiv.json` exists, load liked papers and add them to
-   the corpus with extra weight (positive-signal feedback from the user).
-4. Query arXiv for recent submissions in astro-ph.HE, gr-qc, nucl-th.
-5. Rank candidates with TF-IDF + cosine similarity (sklearn) or fall back
-   to a log-weighted vocabulary profile if sklearn is unavailable.
-6. Write the top-N to _pages/daily-arxiv.md, with collapsible Benty-Fields-
-   style cards. The liked-papers shelf lives on its own page (/liked/),
-   so this page stays clean.
+   the corpus with extra weight.
+4. Query arXiv for recent submissions in the configured categories,
+   plus keyword sweeps for cross-listed papers we'd otherwise miss.
+5. Rank candidates with TF-IDF + cosine similarity.
+6. Render top-N to _pages/daily-arxiv.md using a string template.
 
-Optional but recommended:
-    python3 -m pip install --user scikit-learn
+Requirements: scikit-learn, numpy.
 """
+
+from __future__ import annotations
 
 import html
 import json
-import math
 import re
+import time
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from collections import Counter
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from string import Template
+from typing import Iterable
+
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 # -------- Config ------------------------------------------------------------
 INSPIRE_AUTHOR = "Yong.Gao.1"
 ARXIV_CATS = ["astro-ph.HE", "gr-qc", "nucl-th"]
 DAYS_BACK = 7
 MAX_RESULTS_PER_QUERY = 500
+KEYWORD_MAX_RESULTS = 200
 TOP_N = 50
 
 TOP_COLLABORATORS = 10
-PAPERS_PER_COLLAB = 30
-LIKED_WEIGHT = 3            # how many corpus copies each liked paper contributes
+PAPERS_PER_COLLAB = 60
+LIKED_WEIGHT = 3
+
+KEYWORDS = [
+    "neutron star", "dense matter", "equation of state", "kilonova",
+    "binary neutron star", "tidal deformability", "pulsar glitch", "r-mode",
+    "nuclear pasta", "numerical relativity", "gravitational waves", "pulsar",
+    "test gravity", "dynamical tides", "resonances",
+]
+
+EXTRA_AUTHOR_NAMES = [
+    "Kip Thorne", "Nicolas Yunes", "Hang Yu", "Huan Yang",
+    "Dong Lai", "Yanbei Chen","K.-J. Lee", "Bing Zhang", "Zhiqiang Miao",
+]
+
+ARXIV_THROTTLE_SECONDS = 3
+HTTP_RETRIES = 3
+HTTP_TIMEOUT = 60
+USER_AGENT = "yg-arxiv-feed/1.0 (mailto:yong@example)"  # courtesy for arXiv/INSPIRE
 
 ROOT = Path(__file__).resolve().parent.parent
 LIKED_FILE = ROOT / "_data" / "liked_arxiv.json"
-LEGACY_SAVED_FILE = ROOT / "_data" / "saved_arxiv.json"   # one-time migration source
+LEGACY_SAVED_FILE = ROOT / "_data" / "saved_arxiv.json"
 OUT_FILE = ROOT / "_pages" / "daily-arxiv.md"
-
-STOPWORDS = {
-    "the","a","an","of","in","to","and","or","for","on","at","by","with","are",
-    "is","was","were","be","been","being","have","has","had","will","would",
-    "we","our","us","this","that","these","those","which","where","when","they",
-    "from","as","it","its","can","may","also","than","then","such","not","no",
-    "but","if","so","do","does","only","other","one","two","three","their",
-    "show","find","present","paper","results","model","models","method","methods",
-    "use","used","using","study","studied","studies","here","however","approach",
-    "demonstrate","new","recently","both","between","within","via","each","over",
-    "while","shown","more","most","some","any","all","non","thus","into","out",
-    "without","through","after","before","different","same","well","found","based",
-}
+TEMPLATE_FILE = ROOT / "_includes" / "arxiv-feed.template.md"
 # -----------------------------------------------------------------------------
 
-try:
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    from sklearn.metrics.pairwise import cosine_similarity
-    import numpy as np
-    HAS_SKLEARN = True
-except ImportError:
-    HAS_SKLEARN = False
+
+@dataclass
+class CorpusEntry:
+    text: str
+    weight: int = 1
 
 
-def _http_json(url):
-    req = urllib.request.Request(url, headers={"Accept": "application/json"})
-    return json.loads(urllib.request.urlopen(req, timeout=60).read())
+# ---------- HTTP helpers ----------------------------------------------------
+
+def _http_get(url: str, accept: str = "application/json") -> bytes:
+    last_err = None
+    for attempt in range(HTTP_RETRIES):
+        try:
+            req = urllib.request.Request(
+                url, headers={"Accept": accept, "User-Agent": USER_AGENT}
+            )
+            return urllib.request.urlopen(req, timeout=HTTP_TIMEOUT).read()
+        except Exception as e:
+            last_err = e
+            time.sleep(2 ** attempt)
+    raise last_err  # type: ignore[misc]
 
 
-def _paper_text(meta):
-    t = (meta.get("titles") or [{}])[0].get("title", "") or ""
-    a = ""
-    if meta.get("abstracts"):
-        a = meta["abstracts"][0].get("value", "") or ""
-    return (t.strip() + " " + a.strip()).strip()
+def _http_json(url: str) -> dict:
+    return json.loads(_http_get(url, accept="application/json"))
 
 
-def _arxiv_id_of(meta):
+# ---------- INSPIRE ---------------------------------------------------------
+
+def _paper_text(meta: dict) -> str:
+    titles = meta.get("titles") or []
+    abstracts = meta.get("abstracts") or []
+    title = (titles[0].get("title") if titles else "") or ""
+    abstract = (abstracts[0].get("value") if abstracts else "") or ""
+    return f"{title.strip()} {abstract.strip()}".strip()
+
+
+def _arxiv_id_of(meta: dict) -> str | None:
     eps = meta.get("arxiv_eprints") or []
-    if eps:
-        v = (eps[0].get("value") or "").strip()
-        return re.sub(r"v\d+$", "", v) if v else None
-    return None
+    if not eps:
+        return None
+    v = (eps[0].get("value") or "").strip()
+    return _strip_version(v) if v else None
 
 
-def fetch_author_papers(bai, size=200):
+def _strip_version(arxiv_id: str) -> str:
+    return re.sub(r"v\d+$", "", arxiv_id)
+
+
+def fetch_author_papers(bai: str, size: int = 200) -> list[dict]:
     url = (
         "https://inspirehep.net/api/literature?"
         f"size={size}&sort=mostrecent&q=a%20{bai}"
@@ -100,307 +132,335 @@ def fetch_author_papers(bai, size=200):
     return _http_json(url)["hits"]["hits"]
 
 
-def pick_top_collaborators(yong_hits, top_n):
-    counter = Counter()
-    for h in yong_hits:
+def lookup_bai_by_name(name: str) -> str | None:
+    url = (
+        "https://inspirehep.net/api/authors?"
+        f"q={urllib.parse.quote(name)}&size=5&fields=ids,name"
+    )
+    try:
+        hits = _http_json(url)["hits"]["hits"]
+    except Exception as e:
+        print(f"    ! INSPIRE lookup failed for {name}: {e}")
+        return None
+    for h in hits:
+        for x in (h.get("metadata") or {}).get("ids") or []:
+            if x.get("schema") == "INSPIRE BAI":
+                return x["value"]
+    return None
+
+
+def pick_top_collaborators(my_papers: list[dict], top_n: int) -> list[str]:
+    counter: Counter[str] = Counter()
+    for h in my_papers:
         for a in h["metadata"].get("authors", []):
-            ids = a.get("ids") or []
-            bai = next((x["value"] for x in ids if x.get("schema") == "INSPIRE BAI"), None)
-            if bai and bai != INSPIRE_AUTHOR:
-                counter[bai] += 1
+            for x in a.get("ids") or []:
+                if x.get("schema") == "INSPIRE BAI" and x["value"] != INSPIRE_AUTHOR:
+                    counter[x["value"]] += 1
     return [bai for bai, _ in counter.most_common(top_n)]
 
 
-def load_liked_papers():
-    if LIKED_FILE.exists():
-        try:
-            return json.loads(LIKED_FILE.read_text())
-        except Exception as e:
-            print(f"  ! could not parse {LIKED_FILE}: {e}")
-            return []
-    if LEGACY_SAVED_FILE.exists():
-        try:
-            return json.loads(LEGACY_SAVED_FILE.read_text())
-        except Exception:
-            pass
-    return []
+# ---------- Corpus assembly -------------------------------------------------
+
+def _key_for(meta: dict, text: str) -> str:
+    return _arxiv_id_of(meta) or text[:80]
 
 
-def build_corpus():
-    print(f"  + your papers (bai={INSPIRE_AUTHOR})")
-    yong_hits = fetch_author_papers(INSPIRE_AUTHOR)
-    print(f"    {len(yong_hits)} papers")
-
-    collabs = pick_top_collaborators(yong_hits, TOP_COLLABORATORS)
-    print(f"  + top collaborators: {', '.join(collabs)}")
-
-    seen = {}
-    for h in yong_hits:
-        txt = _paper_text(h["metadata"])
-        if not txt:
+def _add_inspire_hits(corpus: dict[str, CorpusEntry], hits: list[dict]) -> int:
+    added = 0
+    for h in hits:
+        meta = h["metadata"]
+        text = _paper_text(meta)
+        if not text:
             continue
-        aid = _arxiv_id_of(h["metadata"])
-        seen[aid or txt[:80]] = (txt, 1, "yong")
+        key = _key_for(meta, text)
+        if key in corpus:
+            continue
+        corpus[key] = CorpusEntry(text=text)
+        added += 1
+    return added
 
-    for bai in collabs:
+
+def fetch_corpus_papers() -> dict[str, CorpusEntry]:
+    """All INSPIRE-sourced papers: you + collaborators + extra authors."""
+    print(f"  + your papers (bai={INSPIRE_AUTHOR})")
+    my_papers = fetch_author_papers(INSPIRE_AUTHOR)
+    print(f"    {len(my_papers)} papers")
+
+    collaborators = pick_top_collaborators(my_papers, TOP_COLLABORATORS)
+    print(f"  + top collaborators: {', '.join(collaborators) or '(none)'}")
+
+    corpus: dict[str, CorpusEntry] = {}
+    _add_inspire_hits(corpus, my_papers)
+
+    extra_bais = _resolve_extra_authors(known={INSPIRE_AUTHOR, *collaborators})
+
+    for bai in collaborators + extra_bais:
         try:
             hits = fetch_author_papers(bai, size=PAPERS_PER_COLLAB)
         except Exception as e:
             print(f"    ! failed to fetch {bai}: {e}")
             continue
-        added = 0
-        for h in hits:
-            txt = _paper_text(h["metadata"])
-            if not txt:
-                continue
-            aid = _arxiv_id_of(h["metadata"])
-            key = aid or txt[:80]
-            if key in seen:
-                continue
-            seen[key] = (txt, 1, bai)
-            added += 1
+        added = _add_inspire_hits(corpus, hits)
         print(f"    {bai}: +{added} new papers")
 
-    liked = load_liked_papers()
-    if liked:
-        for s in liked:
-            aid = s.get("id") or "liked-" + (s.get("title") or "")[:40]
-            text = ((s.get("title") or "") + " " + (s.get("abstract") or "")).strip()
-            if not text:
-                continue
-            seen[aid] = (text, LIKED_WEIGHT, "liked")
-        print(f"  + liked papers (×{LIKED_WEIGHT} weight): {len(liked)}")
-    else:
-        print(f"  + liked papers: 0  (export from /liked/ once you've liked some)")
-
-    return [v for v in seen.values()]
+    return corpus
 
 
-def tokenize(text):
-    text = re.sub(r"<[^>]+>", " ", text or "").lower()
-    toks = re.findall(r"[a-z][a-z\-]{2,}", text)
-    return [t for t in toks if t not in STOPWORDS]
+def _resolve_extra_authors(known: set[str]) -> list[str]:
+    resolved: list[str] = []
+    for name in EXTRA_AUTHOR_NAMES:
+        bai = lookup_bai_by_name(name)
+        if not bai:
+            print(f"    ! could not resolve {name} to a BAI")
+            continue
+        if bai in known or bai in resolved:
+            print(f"    {name} → {bai} (already in corpus)")
+            continue
+        resolved.append(bai)
+        print(f"    + {name} → {bai}")
+    return resolved
 
 
-def fetch_arxiv_recent(cats, days_back, max_results):
-    q = " OR ".join(f"cat:{c}" for c in cats)
+def load_liked_papers() -> list[dict]:
+    for path in (LIKED_FILE, LEGACY_SAVED_FILE):
+        if not path.exists():
+            continue
+        try:
+            return json.loads(path.read_text())
+        except Exception as e:
+            print(f"  ! could not parse {path}: {e}")
+    return []
+
+
+def merge_liked(corpus: dict[str, CorpusEntry], liked: list[dict]) -> int:
+    n_added = 0
+    for s in liked:
+        text = f"{s.get('title') or ''} {s.get('abstract') or ''}".strip()
+        if not text:
+            continue
+        key = s.get("id") or "liked-" + (s.get("title") or "")[:40]
+        # If a liked paper is already in the corpus (e.g. authored by you or a
+        # collaborator), bump its weight rather than adding a duplicate entry.
+        if key in corpus:
+            corpus[key].weight = max(corpus[key].weight, LIKED_WEIGHT)
+        else:
+            corpus[key] = CorpusEntry(text=text, weight=LIKED_WEIGHT)
+            n_added += 1
+    return n_added
+
+
+# ---------- arXiv -----------------------------------------------------------
+
+@dataclass
+class Candidate:
+    id: str
+    title: str
+    summary: str
+    authors: list[str]
+    published: datetime
+    primary_category: str
+
+
+def _parse_arxiv_feed(xml_bytes: bytes, cutoff: datetime) -> list[Candidate]:
+    ns = {"a": "http://www.w3.org/2005/Atom"}
+    tree = ET.fromstring(xml_bytes)
+    out: list[Candidate] = []
+    for e in tree.findall("a:entry", ns):
+        published = datetime.fromisoformat(
+            e.find("a:published", ns).text.replace("Z", "+00:00")  # type: ignore[union-attr]
+        )
+        if published < cutoff:
+            break
+        arxiv_id = _strip_version(e.find("a:id", ns).text.rsplit("/", 1)[-1])  # type: ignore[union-attr]
+        title = re.sub(r"\s+", " ", (e.find("a:title", ns).text or "")).strip()  # type: ignore[union-attr]
+        summary = re.sub(r"\s+", " ", (e.find("a:summary", ns).text or "")).strip()  # type: ignore[union-attr]
+        authors = [a.find("a:name", ns).text for a in e.findall("a:author", ns)]  # type: ignore[union-attr]
+        cats = [c.get("term") for c in e.findall("a:category", ns)]
+        out.append(Candidate(
+            id=arxiv_id, title=title, summary=summary,
+            authors=[a for a in authors if a],
+            published=published,
+            primary_category=cats[0] if cats else "",
+        ))
+    return out
+
+
+def _arxiv_query(search_query: str, days_back: int, max_results: int) -> list[Candidate]:
     url = (
         "http://export.arxiv.org/api/query?"
-        f"search_query={urllib.parse.quote(q)}"
+        f"search_query={urllib.parse.quote(search_query)}"
         f"&sortBy=submittedDate&sortOrder=descending&max_results={max_results}"
     )
-    xml_bytes = urllib.request.urlopen(url, timeout=60).read()
-    tree = ET.fromstring(xml_bytes)
-    ns = {"a": "http://www.w3.org/2005/Atom"}
     cutoff = datetime.now(timezone.utc) - timedelta(days=days_back)
-
-    papers = []
-    for e in tree.findall("a:entry", ns):
-        pub = datetime.fromisoformat(
-            e.find("a:published", ns).text.replace("Z", "+00:00")
-        )
-        if pub < cutoff:
-            break
-        arxiv_id = e.find("a:id", ns).text.rsplit("/", 1)[-1]
-        arxiv_id = re.sub(r"v\d+$", "", arxiv_id)
-        title = re.sub(r"\s+", " ", (e.find("a:title", ns).text or "")).strip()
-        summary = re.sub(r"\s+", " ", (e.find("a:summary", ns).text or "")).strip()
-        authors = [a.find("a:name", ns).text for a in e.findall("a:author", ns)]
-        cats_elem = [c.get("term") for c in e.findall("a:category", ns)]
-        primary = cats_elem[0] if cats_elem else ""
-        papers.append({
-            "id": arxiv_id,
-            "title": title,
-            "summary": summary,
-            "authors": authors,
-            "published": pub,
-            "primary_category": primary,
-        })
-    return papers
+    return _parse_arxiv_feed(_http_get(url, accept="application/atom+xml"), cutoff)
 
 
-def score_tfidf(candidates, corpus_with_weights):
-    corpus_texts = []
-    for txt, weight, _ in corpus_with_weights:
-        corpus_texts.extend([txt] * max(1, int(weight)))
-    cand_texts = [f"{p['title']} {p['summary']}" for p in candidates]
+def fetch_arxiv_candidates() -> list[Candidate]:
+    cat_clause = " OR ".join(f"cat:{c}" for c in ARXIV_CATS)
+    by_id: dict[str, Candidate] = {}
+
+    print(f"  · category sweep: {cat_clause}")
+    for p in _arxiv_query(cat_clause, DAYS_BACK, MAX_RESULTS_PER_QUERY):
+        by_id[p.id] = p
+    print(f"    {len(by_id)} from categories")
+
+    for kw in KEYWORDS:
+        time.sleep(ARXIV_THROTTLE_SECONDS)
+        try:
+            hits = _arxiv_query(
+                f'all:"{kw}" AND ({cat_clause})', DAYS_BACK, KEYWORD_MAX_RESULTS,
+            )
+        except Exception as e:
+            print(f"    ! keyword '{kw}' failed: {e}")
+            continue
+        added = sum(1 for p in hits if p.id not in by_id)
+        for p in hits:
+            by_id.setdefault(p.id, p)
+        print(f"    +{added} from '{kw}' ({len(hits)} matched)")
+
+    return list(by_id.values())
+
+
+# ---------- Scoring ---------------------------------------------------------
+
+def score_candidates(
+    candidates: list[Candidate], corpus: Iterable[CorpusEntry],
+) -> np.ndarray:
+    corpus_list = list(corpus)
+    # Replicate by integer weight. Replicating both inflates the corpus's IDF
+    # for liked terms and pulls candidate similarity toward them — good enough
+    # as a relevance prior. A cleaner alternative is per-row sample weighting
+    # in the cosine aggregation; revisit if the bias becomes a problem.
+    corpus_texts = [
+        e.text for e in corpus_list for _ in range(max(1, e.weight))
+    ]
+    cand_texts = [f"{c.title} {c.summary}" for c in candidates]
 
     vec = TfidfVectorizer(
-        stop_words=list(STOPWORDS),
+        stop_words="english",
         token_pattern=r"(?u)\b[a-z][a-z\-]{2,}\b",
         ngram_range=(1, 2),
         max_df=0.95,
         min_df=1,
     )
     X = vec.fit_transform([t.lower() for t in corpus_texts + cand_texts])
-    nC = len(corpus_texts)
-    sim = cosine_similarity(X[nC:], X[:nC])
+    n_corpus = len(corpus_texts)
+    sim = cosine_similarity(X[n_corpus:], X[:n_corpus])
     max_sim = sim.max(axis=1)
     mean_top5 = np.sort(sim, axis=1)[:, -5:].mean(axis=1)
     return 0.7 * max_sim + 0.3 * mean_top5
 
 
-def score_profile(candidates, corpus_with_weights):
-    profile = Counter()
-    for txt, weight, _ in corpus_with_weights:
-        toks = tokenize(txt)
-        for t in toks:
-            profile[t] += int(weight)
-    out = []
-    for p in candidates:
-        toks = tokenize(f"{p['title']} {p['summary']}")
-        if not toks:
-            out.append(0.0); continue
-        s = sum(math.log(1 + profile[t]) for t in toks if profile[t])
-        out.append(s / math.sqrt(len(toks)))
-    return out
+# ---------- Rendering -------------------------------------------------------
+
+PAGE_TEMPLATE = Template("""---
+title: "daily-arxiv"
+date: $date
+permalink: /daily-arxiv/
+modified: $date
+excerpt: Daily arXiv feed ranked against my own work, my collaborators', and the papers I've liked.
+author_profile: false
+mathjax: true
+---
+
+<p class="arxiv-toolbar yg-private"><a href="{{ site.url }}/liked/">★ Liked papers →</a></p>
+
+$items
+
+<p class="arxiv-rebuild-meta">
+Rebuilt $rebuilt · $n_candidates candidates over the past $days_back days · corpus: $n_corpus papers (you + top $top_collab collaborators$liked_suffix) · ranker: TF-IDF (scikit-learn)
+</p>
+
+{% include arxiv-like.html %}
+""")
+
+ITEM_TEMPLATE = Template("""<article class="arxiv-item" data-arxiv-id="$id">
+  <h3 class="arxiv-item__title"><a href="https://arxiv.org/abs/$id">$title</a></h3>
+  <p class="arxiv-item__meta">
+    <span class="arxiv-item__authors">$authors</span>
+    · <span class="arxiv-item__category">$category</span>
+    · <a class="arxiv-item__id" href="https://arxiv.org/abs/$id">$id</a>
+    · <span class="arxiv-item__score">relevance $score</span>
+  </p>
+  <details class="arxiv-item__abstract-wrap"><summary>Abstract</summary>
+    <p class="arxiv-item__abstract">$abstract</p>
+  </details>
+  <p class="arxiv-item__actions">
+    <a class="arxiv-action-link" href="https://arxiv.org/pdf/$id.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="$btn_class" data-arxiv-id="$id" data-payload="$payload"$server_liked_attr>$btn_text</button>
+  </p>
+</article>
+""")
 
 
-def render_page(papers, scores, top_n, n_candidates, n_corpus, n_liked):
+def _render_item(c: Candidate, score: float, is_liked: bool) -> str:
+    authors = ", ".join(c.authors[:6]) + (", et al." if len(c.authors) > 6 else "")
+    payload = json.dumps({
+        "id": c.id,
+        "title": c.title,
+        "authors": c.authors[:6] + (["et al."] if len(c.authors) > 6 else []),
+        "abstract": c.summary,
+        "category": c.primary_category,
+    }, ensure_ascii=False)
+    return ITEM_TEMPLATE.substitute(
+        id=c.id,
+        title=html.escape(c.title),
+        authors=html.escape(authors),
+        category=c.primary_category,
+        score=f"{score:.2f}",
+        abstract=html.escape(c.summary),
+        payload=html.escape(payload, quote=True),
+        btn_class="arxiv-like-btn yg-private is-liked" if is_liked else "arxiv-like-btn yg-private",
+        btn_text="★ Liked" if is_liked else "★ Like",
+        server_liked_attr=' data-server-liked="1"' if is_liked else "",
+    )
+
+
+def render_page(
+    candidates: list[Candidate],
+    scores: np.ndarray,
+    n_corpus: int,
+    n_liked: int,
+) -> str:
     now = datetime.now(timezone.utc)
-    scored = sorted(zip(scores, papers), key=lambda t: t[0], reverse=True)[:top_n]
+    ranked = sorted(zip(scores, candidates), key=lambda t: float(t[0]), reverse=True)[:TOP_N]
     liked_ids = {s.get("id") for s in load_liked_papers() if s.get("id")}
 
-    head = [
-        "---",
-        'title: "daily-arxiv"',
-        f"date: {now.strftime('%Y-%m-%d')}",
-        "permalink: /daily-arxiv/",
-        f"modified: {now.strftime('%Y-%m-%d')}",
-        "excerpt: Daily arXiv feed ranked against my own work, my collaborators', and the papers I've liked.",
-        "author_profile: false",
-        "mathjax: true",
-        "---",
-        "",
-        '<p class="arxiv-toolbar yg-private"><a href="{{ site.url }}/liked/">★ Liked papers →</a></p>',
-        "",
-    ]
+    items = "\n".join(
+        _render_item(c, float(score), c.id in liked_ids) for score, c in ranked
+    )
 
-    body = []
-    for score, p in scored:
-        s = float(score)
-        authors = ", ".join(p["authors"][:6]) + (", et al." if len(p["authors"]) > 6 else "")
-        abstract = p["summary"]
-        payload = json.dumps({
-            "id": p["id"],
-            "title": p["title"],
-            "authors": p["authors"][:6] + (["et al."] if len(p["authors"]) > 6 else []),
-            "abstract": abstract,
-            "category": p["primary_category"],
-        }, ensure_ascii=False)
-        payload_attr = html.escape(payload, quote=True)
-        is_saved = p["id"] in liked_ids
-        btn_class = "arxiv-like-btn yg-private is-liked" if is_saved else "arxiv-like-btn yg-private"
-        btn_attrs = f'data-arxiv-id="{p["id"]}" data-payload="{payload_attr}"'
-        if is_saved:
-            btn_attrs += ' data-server-liked="1"'
-        btn_text = "★ Liked" if is_saved else "★ Like"
-        body.extend([
-            f'<article class="arxiv-item" data-arxiv-id="{p["id"]}">',
-            f'  <h3 class="arxiv-item__title"><a href="https://arxiv.org/abs/{p["id"]}">{html.escape(p["title"])}</a></h3>',
-            '  <p class="arxiv-item__meta">',
-            f'    <span class="arxiv-item__authors">{html.escape(authors)}</span>',
-            f'    · <span class="arxiv-item__category">{p["primary_category"]}</span>',
-            f'    · <a class="arxiv-item__id" href="https://arxiv.org/abs/{p["id"]}">{p["id"]}</a>',
-            f'    · <span class="arxiv-item__score">relevance {s:.2f}</span>',
-            "  </p>",
-            f'  <details class="arxiv-item__abstract-wrap"><summary>Abstract</summary>',
-            f'    <p class="arxiv-item__abstract">{html.escape(abstract)}</p>',
-            f'  </details>',
-            '  <p class="arxiv-item__actions">',
-            f'    <a class="arxiv-action-link" href="https://arxiv.org/pdf/{p["id"]}.pdf" target="_blank" rel="noopener">PDF</a>',
-            f'    <button type="button" class="{btn_class}" {btn_attrs}>{btn_text}</button>',
-            "  </p>",
-            "</article>",
-            "",
-        ])
-
-    foot = [
-        "",
-        '<p class="arxiv-rebuild-meta">',
-        f"Rebuilt {now.strftime('%Y-%m-%d %H:%M UTC')} · "
-        f"{n_candidates} candidates over the past {DAYS_BACK} days · "
-        f"corpus: {n_corpus} papers (you + top {TOP_COLLABORATORS} collaborators"
-        + (f" + {n_liked} liked" if n_liked else "")
-        + f") · ranker: {'TF-IDF (scikit-learn)' if HAS_SKLEARN else 'vocabulary profile (stdlib)'}",
-        "</p>",
-        "",
-    ]
-
-    script = r"""<script>
-(function () {
-  var KEY = 'yg-arxiv-liked';
-  var LEGACY = 'yg-arxiv-saved';
-
-  // One-time migration: copy yg-arxiv-saved → yg-arxiv-liked if needed.
-  function migrate() {
-    if (localStorage.getItem(KEY)) return;
-    var legacy = localStorage.getItem(LEGACY);
-    if (legacy) {
-      localStorage.setItem(KEY, legacy);
-      // Keep legacy intact for safety; user can manually clear if they want.
-    }
-  }
-
-  function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } }
-  function store(v) { localStorage.setItem(KEY, JSON.stringify(v)); }
-
-  function refresh() {
-    var likedIds = load().map(function (x) { return typeof x === 'string' ? x : x.id; });
-    document.querySelectorAll('.arxiv-like-btn[data-arxiv-id]').forEach(function (btn) {
-      var inLocal = likedIds.indexOf(btn.dataset.arxivId) !== -1;
-      var inServer = btn.dataset.serverLiked === '1';
-      var on = inLocal || inServer;
-      btn.classList.toggle('is-liked', on);
-      btn.textContent = on ? '★ Liked' : '★ Like';
-    });
-  }
-
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest('.arxiv-like-btn[data-arxiv-id]');
-    if (!btn) return;
-    // Server-committed papers can't be unliked from the browser.
-    if (btn.dataset.serverLiked === '1') return;
-    var id = btn.dataset.arxivId;
-    var liked = load();
-    var idx = liked.findIndex(function (x) { return (typeof x === 'string' ? x : x.id) === id; });
-    if (idx === -1) {
-      var payload = btn.dataset.payload ? JSON.parse(btn.dataset.payload) : { id: id };
-      payload.saved_at = new Date().toISOString();
-      liked.push(payload);
-    } else {
-      liked.splice(idx, 1);
-    }
-    store(liked);
-    refresh();
-  });
-
-  migrate();
-  refresh();
-})();
-</script>
-"""
-    return "\n".join(head + body + foot) + script
+    return PAGE_TEMPLATE.substitute(
+        date=now.strftime("%Y-%m-%d"),
+        rebuilt=now.strftime("%Y-%m-%d %H:%M UTC"),
+        items=items,
+        n_candidates=len(candidates),
+        days_back=DAYS_BACK,
+        n_corpus=n_corpus,
+        top_collab=TOP_COLLABORATORS,
+        liked_suffix=f" + {n_liked} liked" if n_liked else "",
+    )
 
 
-def main():
+# ---------- Main ------------------------------------------------------------
+
+def main() -> None:
     print("Building corpus from INSPIRE…")
-    corpus = build_corpus()
-    n_corpus_papers = len(corpus)
-    n_liked = sum(1 for _, _, src in corpus if src == "liked")
-    print(f"  total: {n_corpus_papers} unique papers")
+    corpus = fetch_corpus_papers()
 
-    print(f"Querying arXiv (cats={ARXIV_CATS}, past {DAYS_BACK}d)…")
-    papers = fetch_arxiv_recent(ARXIV_CATS, DAYS_BACK, MAX_RESULTS_PER_QUERY)
-    print(f"  {len(papers)} candidates retrieved")
+    liked = load_liked_papers()
+    n_liked = merge_liked(corpus, liked)
+    print(f"  + liked papers (×{LIKED_WEIGHT} weight): {len(liked)} ({n_liked} new)")
+    print(f"  total: {len(corpus)} unique papers")
 
-    print(f"Scoring with {'TF-IDF' if HAS_SKLEARN else 'profile'}…")
-    if HAS_SKLEARN:
-        scores = score_tfidf(papers, corpus)
-    else:
-        scores = score_profile(papers, corpus)
+    print(f"Querying arXiv (cats={ARXIV_CATS}, +{len(KEYWORDS)} keywords, past {DAYS_BACK}d)…")
+    candidates = fetch_arxiv_candidates()
+    print(f"  {len(candidates)} unique candidates retrieved")
 
-    page = render_page(papers, scores, TOP_N, len(papers), n_corpus_papers, n_liked)
+    print("Scoring with TF-IDF…")
+    scores = score_candidates(candidates, corpus.values())
+
+    page = render_page(candidates, scores, n_corpus=len(corpus), n_liked=n_liked)
     OUT_FILE.write_text(page)
     print(f"Wrote {OUT_FILE}")
 
