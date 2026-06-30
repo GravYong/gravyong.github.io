@@ -68,7 +68,7 @@ tags: animation
         (modified MIT bag-model EOS, model <tt>SS1</tt>), with the gravitational-wave
         signal beside the equatorial-plane rest-mass density
         $\log_{10}[\rho/(\mathrm{g\,cm^{-3}})]$. After merger the green line marks this unbound
-        ejecta. $.
+        ejecta.
       </figcaption>
     </figure>
   </section>
