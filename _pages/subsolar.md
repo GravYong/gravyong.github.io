@@ -67,7 +67,7 @@ tags: animation
         Fig. 1: Equal-mass $0.5{+}0.5\,M_\odot$ binary <em>strange star</em> merger
         (modified MIT bag-model EOS, model <tt>SS1</tt>), with the gravitational-wave
         signal beside the equatorial-plane rest-mass density
-        $\log_{10}[\rho/(\mathrm{g\,cm^{-3}})]$. After merger the green line marks this unbound
+        $\log_{10}[\rho/(\mathrm{g\,cm^{-3}})]$. After merger the green line marks the unbound
         ejecta.
       </figcaption>
     </figure>
