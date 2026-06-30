@@ -52,15 +52,8 @@ tags: animation
 </head>
 <body>
   <p style="font-size: 18px; line-height: 1.6; color: #333;">
-    These movies accompany the first numerical-relativity simulations of
-    subsolar-mass binary <em>strange star</em> (SS) mergers, contrasted with
-    subsolar-mass binary <em>neutron star</em> (NS) mergers. A strange star is
-    self-bound by the strong interaction and of nearly uniform density, ending in
-    a sharp surface, whereas a neutron star is gravitationally bound, centrally
-    condensed, and more extended. The two below are representative equal-mass
-    $0.5{+}0.5\,M_\odot$ binaries with the same chirp mass, so they follow an
-    almost identical point-particle inspiral and diverge only as matter effects
-    take over near merger.
+    These movies accompany the simulations of
+    subsolar-mass binary <em>strange star</em> (SS) and <em>neutron star</em> (NS) mergers. 
   </p>
 
   <!-- Strange star (MIT bag model) -->
@@ -72,20 +65,15 @@ tags: animation
       </video>
       <figcaption>
         Fig. 1: Equal-mass $0.5{+}0.5\,M_\odot$ binary <em>strange star</em> merger
-        with the modified MIT bag-model EOS (model <tt>SS1</tt>), showing the
-        gravitational-wave signal alongside the evolving equatorial-plane rest-mass
-        density $\log_{10}[\rho/(\mathrm{g\,cm^{-3}})]$. The self-bound star is
-        compact ($R\simeq8.4\,\mathrm{km}$, compactness $C\simeq0.088$, tidal
-        deformability $\Lambda=5.2\times10^4$) and only weakly deformed through the
-        inspiral, so it keeps its double-peaked binary structure up to contact and
-        reaches a high gravitational-wave cut frequency
-        $f_\mathrm{cut}\simeq825\,\mathrm{Hz}$ before the cores collide. The steep
-        surface drives a strong shock that heats the contact layer
-        ($\epsilon_\mathrm{th}\gtrsim0.03$) and a large radial bounce that re-expands
-        the merged core from $\sim7\,\mathrm{km}$ out to $\simeq14\,\mathrm{km}$,
-        raising spiral arms that eject $\sim10^{-2}\,M_\odot$ of decompressed quark
-        matter. The remnant settles into a differentially rotating configuration
-        surrounded by an extended disk and oscillates at a post-merger frequency
+        (modified MIT bag-model EOS, model <tt>SS1</tt>), with the gravitational-wave
+        signal beside the equatorial-plane rest-mass density
+        $\log_{10}[\rho/(\mathrm{g\,cm^{-3}})]$. Being self-bound, compact, and
+        sharp-surfaced, the stars are barely deformed during inspiral and stay
+        double-peaked up to contact, giving a high cut frequency
+        $f_\mathrm{cut}\simeq825\,\mathrm{Hz}$. The collision then drives a strong
+        shock and a large radial bounce that ejects $\sim10^{-2}\,M_\odot$ of
+        decompressed quark matter; after merger the green line marks this unbound
+        ejecta. The remnant is differentially rotating and oscillates at
         $f_2\simeq1750\,\mathrm{Hz}$.
       </figcaption>
     </figure>
@@ -99,18 +87,13 @@ tags: animation
         <source src="https://gravyong.github.io/assets/videos/SFHo_05_05_N100_gwsnap.mp4" type="video/mp4">
       </video>
       <figcaption>
-        Fig. 2: Same as Fig. 1 but for the equal-mass $0.5{+}0.5\,M_\odot$ binary
-        <em>neutron star</em> merger with the <tt>SFHo</tt> EOS. The gravitationally
-        bound star is more extended ($R\simeq12.4\,\mathrm{km}$, $C\simeq0.060$,
-        $\Lambda=8.2\times10^4$) and more tidally deformable, so it develops
-        pronounced spiral arms and sheds mass already before contact, reaching merger
-        at a lower cut frequency $f_\mathrm{cut}\simeq681\,\mathrm{Hz}$. Its collision
-        is milder, leaving a denser oscillating remnant that radiates at a
-        <em>higher</em> post-merger frequency $f_2\simeq1900\,\mathrm{Hz}$, even
-        though before merger it is the <em>less</em> compact of the two stars. Because
-        the strange star's $f_\mathrm{cut}$ is shifted up while its $f_2$ is shifted
-        down, the ratio $f_2/f_\mathrm{cut}$ cleanly separates the two classes and
-        offers a way to tell a subsolar strange star from a neutron star.
+        Fig. 2: Same as Fig. 1 but for the <tt>SFHo</tt> neutron-star EOS. Being
+        gravitationally bound, more extended, and far more tidally deformable, the
+        stars grow pronounced spiral arms and shed mass already before contact (the
+        green line again marks the ejecta), so merger occurs at a lower cut frequency
+        $f_\mathrm{cut}\simeq681\,\mathrm{Hz}$. The milder collision leaves a denser
+        remnant oscillating at a <em>higher</em> $f_2\simeq1900\,\mathrm{Hz}$, so the
+        ratio $f_2/f_\mathrm{cut}$ cleanly separates the two classes.
       </figcaption>
     </figure>
   </section>
