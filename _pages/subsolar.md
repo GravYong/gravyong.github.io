@@ -53,7 +53,7 @@ tags: animation
 <body>
   <p style="font-size: 18px; line-height: 1.6; color: #333;">
     These movies accompany the simulations of
-    subsolar-mass binary <em>strange star</em> (SS) and <em>neutron star</em> (NS) mergers. 
+    subsolar-mass binary <em>strange star</em> and binary <em>neutron star</em> mergers. 
   </p>
 
   <!-- Strange star (MIT bag model) -->
@@ -67,14 +67,8 @@ tags: animation
         Fig. 1: Equal-mass $0.5{+}0.5\,M_\odot$ binary <em>strange star</em> merger
         (modified MIT bag-model EOS, model <tt>SS1</tt>), with the gravitational-wave
         signal beside the equatorial-plane rest-mass density
-        $\log_{10}[\rho/(\mathrm{g\,cm^{-3}})]$. Being self-bound, compact, and
-        sharp-surfaced, the stars are barely deformed during inspiral and stay
-        double-peaked up to contact, giving a high cut frequency
-        $f_\mathrm{cut}\simeq825\,\mathrm{Hz}$. The collision then drives a strong
-        shock and a large radial bounce that ejects $\sim10^{-2}\,M_\odot$ of
-        decompressed quark matter; after merger the green line marks this unbound
-        ejecta. The remnant is differentially rotating and oscillates at
-        $f_2\simeq1750\,\mathrm{Hz}$.
+        $\log_{10}[\rho/(\mathrm{g\,cm^{-3}})]$. After merger the green line marks this unbound
+        ejecta. $.
       </figcaption>
     </figure>
   </section>
@@ -87,13 +81,7 @@ tags: animation
         <source src="https://gravyong.github.io/assets/videos/SFHo_05_05_N100_gwsnap.mp4" type="video/mp4">
       </video>
       <figcaption>
-        Fig. 2: Same as Fig. 1 but for the <tt>SFHo</tt> neutron-star EOS. Being
-        gravitationally bound, more extended, and far more tidally deformable, the
-        stars grow pronounced spiral arms and shed mass already before contact (the
-        green line again marks the ejecta), so merger occurs at a lower cut frequency
-        $f_\mathrm{cut}\simeq681\,\mathrm{Hz}$. The milder collision leaves a denser
-        remnant oscillating at a <em>higher</em> $f_2\simeq1900\,\mathrm{Hz}$, so the
-        ratio $f_2/f_\mathrm{cut}$ cleanly separates the two classes.
+        Fig. 2: Same as Fig. 1 but for the <tt>SFHo</tt> neutron-star EOS. 
       </figcaption>
     </figure>
   </section>
