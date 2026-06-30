@@ -23,6 +23,9 @@ modified: 2024-12-20
 4. Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries <a href="https://gravyong.github.io/strain/" style="color: #F48FB1;">[link: strain_evolution]</a>
 <span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
 
+5. Subsolar-mass binary mergers of strange stars and neutron stars: gravitational waves and ejecta <a href="https://gravyong.github.io/subsolar/" style="color: #F48FB1;">[link: subsolar_mergers]</a>
+<span style="display: block; width: 100%; height: 2px; background-color: #808080; margin-top: 0;"></span>
+
 
 
 

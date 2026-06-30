@@ -12,29 +12,6 @@
   })();
 </script>
 
-<!-- Owner-only mode: ?me=1 unlocks private UI (Like buttons, /liked/);
-     ?me=0 locks back. Flag persists in localStorage. -->
-<script>
-  (function () {
-    try {
-      var u = new URL(window.location.href);
-      var p = u.searchParams.get('me');
-      if (p === '1') {
-        localStorage.setItem('yg-me', '1');
-        u.searchParams.delete('me');
-        history.replaceState({}, '', u.toString());
-      } else if (p === '0') {
-        localStorage.removeItem('yg-me');
-        u.searchParams.delete('me');
-        history.replaceState({}, '', u.toString());
-      }
-      if (localStorage.getItem('yg-me') === '1') {
-        document.documentElement.classList.add('yg-me');
-      }
-    } catch (e) { /* ignore */ }
-  })();
-</script>
-
 {% if page.mathjax %}
 <!-- MathJax 3 (async, loaded only on pages with mathjax: true) -->
 <script>
