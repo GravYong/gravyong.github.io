@@ -2,7 +2,7 @@
 title: "Curriculum Vitae"
 date: 2022-10-16
 permalink: /cv/
-modified: 2022-10-16
+modified: 2026-11-11
 excerpt:
 tags:
 ---
@@ -25,7 +25,7 @@ tags:
 <br/>
 # Full CV
 <hr style="border:1px solid gray"> 
-You can see the embedded PDF below or <u><a href="https://gravyong.github.io/cv/Yong.pdf">download it here.</a></u>
+Updated November 2026. Download the [English CV]({{ site.url }}/cv/Yong.pdf) or [中文简历]({{ site.url }}/cv/Yong_Chinese.pdf).
 <br/>
-<embed src="https://gravyong.github.io/cv/Yong.pdf" type="application/pdf" width="100%" height="800px" />
+<embed src="{{ site.url }}/cv/Yong.pdf" type="application/pdf" width="100%" height="800px" />
 

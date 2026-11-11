@@ -140,6 +140,11 @@ exclude:
   - README
   - tohost.sh
   - tmp
+  - cv/*.tex
+  - cv/*.cls
+  - cv/*.py
+  - cv/*.sh
+  - cv/Makefile
   - page-archive.html
   - collection-archive.html
   - lrr-index/Makefile

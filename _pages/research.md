@@ -2,34 +2,36 @@
 title: "Research"
 date: 2011-07-17
 permalink: /research/
-modified: 2026-04-25
+modified: 2026-11-11
 excerpt:
 tags:
 mathjax: true
 ---
 
-Neutron stars are the densest objects without event horizons. Their interiors compress nuclear matter well beyond the densities reached in atomic nuclei, and their gravitational fields are strong enough that general relativity is the minimum theoretical commitment required to describe them. I use that extremity as leverage. Most of my work lives in two connected areas.
+I study how the structure and dynamics of compact objects appear in gravitational waves and electromagnetic observations. My work combines analytical modelling, relativistic perturbation theory and numerical-relativity simulations to probe dense matter and gravity in the strong-field regime.
 
-# Neutron-star physics
+# Dense matter and relativistic hydrodynamics of neutron stars
 <hr style="border:1px solid gray">
 
-Understanding what dense matter does inside a neutron star and how that physics imprints itself on signals we can measure. I alternate between **analytical modelling** (stellar-structure equations, relativistic linear perturbation theory for oscillation modes, elastic-crust formalism) and **3D numerical-relativity simulations** of binary mergers with the [Computational Relativistic Astrophysics group](https://www.aei.mpg.de/comp-rel-astro) at AEI. For observational questions I work with pulsar timing data and with hierarchical Bayesian methods for population-level inference from gravitational-wave catalogs.
+- **Quasinormal modes and instabilities of rotating relativistic stars.** I developed a formulation and numerical implementation of the coupled fluid–spacetime eigenvalue problem in full general relativity, with outgoing-wave boundary conditions. It directly gives complex mode frequencies for rapidly rotating stars, including $f$, $r$, other inertial and strongly damped $w$ modes, and their damping or growth rates. The framework resolves secular and dynamical instabilities and quasiradial collapse thresholds. [Gao & Shibata (2026)](https://arxiv.org/abs/2611.03986).
 
-- **Binary mergers and post-merger remnants.** Hypermassive remnants are hot, differentially rotating, and right on the edge of collapse. I study their hydrodynamical and thermal structure and how that shapes the postmerger gravitational-wave signal, using full numerical relativity across a range of equations of state. Companion simulation movies live on the [convection page]({{ site.url }}/convection/).
-- **Oscillation modes and tidal resonances.** A neutron star's equation of state controls the spectrum of modes its interior can support. I characterise those modes for stratified stars with solid crusts, study how resonant and non-resonant tidal excitation deposits energy into the crust, and ask when the resulting elastic strain can break the crust and seed electromagnetic precursors. The [crust-strain page]({{ site.url }}/strain/) has animations of this process.
-- **Universal relations for neutron stars.** EOS-insensitive relations among bulk neutron-star quantities let one cancel the equation-of-state dependence of one observable against another. I derive such relations and work out when they hold or break.
-- **Pulsars, magnetars, and precession.** The complementary electromagnetic view: spin-down, free precession, and polarisation modulations trace a neutron star's shape, elasticity, and magnetic geometry, and occasionally reveal features (like a freely precessing magnetar) that directly constrain interior physics.
-- **Exotic compact-object models.** What if some of the "neutron stars" we observe aren't ordinary neutron stars? Quark-star and strangeon-star models remain viable within current constraints and predict subtly different mass–radius relations, oscillation spectra, and gravitational-wave signatures.
+- **Dynamical tides in neutron-star binaries.** I calculate relativistic stellar oscillations and tidal response, including composition stratification, elastic crusts and phase transitions. Matching to effective field theory gives the mode frequencies and tidal couplings used in effective-one-body evolution to follow mode excitation, gravitational-wave emission and crust failure. Current extensions include generic orbits, viscous tides and neutron-star spin. [Gao & Steinhoff (2026)](https://arxiv.org/abs/2611.14243); [Gao et al. (2025)](https://arxiv.org/abs/2509.00257). The [crust-strain page]({{ site.url }}/strain/) shows how dynamical tides can crack the crust.
 
-# Tests of strong-field gravity
+- **Postmerger hydrodynamics and instabilities.** I derived relativistic convective-stability criteria including buoyancy and rotation and applied them to merger remnants evolved for more than 100 ms. Rotation stabilizes regions that an entropy-only criterion would classify as unstable. I also found a correlation between one-armed mode growth and violations of linear momentum conservation, indicating a possible numerical origin. I am extending the stability analysis to differential rotation, magnetic fields, and thermal and lepton gradients. [Gao et al. (2026)](https://arxiv.org/abs/2501.19053); [simulation movies]({{ site.url }}/convection/).
+
+- **Formation and mergers of strange stars.** I constructed initial data and carried out the first numerical-relativity simulations of subsolar-mass strange-star mergers. The ratio $f_2/f_{\rm cut}$ separates strange-star and neutron-star binaries in the simulated models; strange-star mergers can eject $\sim10^{-2}\,M_\odot$ of decompressed quark matter. My ongoing work includes systematic strange-star binary initial data, strange-star–black-hole mergers and strange-star formation in core collapse. [Gao et al. (2026)](https://arxiv.org/abs/2607.07668).
+
+- **Universal relations and magnetar precession.** With Zexin Hu and Lijing Shao, I helped develop a linear explanation of the $I$–$C$–Love universal relations. I also model the dynamical evolution and polarization signatures of precessing magnetars, working with observers at the Max Planck Institute for Radio Astronomy. [Hu, Gao & Shao (2026)](https://arxiv.org/abs/2505.13110); [Gao et al. (2023)](https://arxiv.org/abs/2211.17087); [Desvignes et al. (2024)](https://doi.org/10.1038/s41550-024-02226-7).
+
+# Testing strong-field gravity
 <hr style="border:1px solid gray">
 
-Using compact objects as laboratories to look for departures from general relativity that are invisible in the weak-field regime. Depending on the theory, the work involves deriving **modified stellar-structure and perturbation equations**, computing the resulting **post-Newtonian waveform corrections**, or propagating them through **full numerical-relativity simulations**. Observational constraints come from X-ray pulsar pulse profiles and from gravitational-wave catalogs.
+- **Neutron-star structure in alternative theories of gravity.** I study stellar structure, scalarization and tidal deformation in scalar-tensor and scalar–Gauss–Bonnet gravity, including applications to X-ray pulsar pulse profiles. [Hu et al. (2021)](https://arxiv.org/abs/2109.13453); [Xu, Gao & Shao (2022)](https://arxiv.org/abs/2111.06561).
 
-- **Scalarised neutron stars in modified gravity.** Above a critical compactness, neutron stars in scalar-tensor and scalar-Gauss-Bonnet theories pick up a non-trivial scalar field that changes their structure, tidal deformability, and pulse-profile appearance.
-- **Beyond-GR waveform corrections.** Additional propagating degrees of freedom produce dipole radiation on top of GR's quadrupole and modify the inspiral phasing. Full numerical-relativity simulations of mergers in modified gravity also give access to universal relations that survive beyond GR.
-- **Lorentz-violation signatures.** Minimal Standard-Model-Extension coefficients alter how a rotating, deformed neutron star precesses — and therefore the continuous gravitational-wave spectrum and pulsar-timing signatures it leaves behind.
+- **Binary mergers and waveform modelling in scalar-tensor gravity.** In our numerical-relativity study of massive scalar-tensor gravity, I contributed physical ideas and calculations of stellar tidal deformation to the analysis of binary-waveform universal relations. Building on this work, I am developing analytical effective-one-body waveform models in scalar-tensor gravity. [Lam et al. (2025)](https://arxiv.org/abs/2410.00137).
+
+- **Lorentz-violation signatures.** I have studied how departures from local Lorentz invariance change neutron-star precession and continuous gravitational-wave spectra. [Xu, Gao & Shao (2021)](https://arxiv.org/abs/2012.01320).
 
 ---
 
-The [publications page]({{ site.url }}/publication/) has the full chronological list. The [convection]({{ site.url }}/convection/) and [crust-strain]({{ site.url }}/strain/) pages host the numerical-simulation and mode-excitation animations that accompany two recent papers.
+The [publications page]({{ site.url }}/publication/) contains the full list of papers, including the latest preprints. My [CV]({{ site.url }}/cv/) gives further information about my research, teaching and academic service.

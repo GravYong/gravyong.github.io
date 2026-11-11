@@ -1,0 +1,482 @@
+{
+  "checked_on": "2026-11-10",
+  "records": [
+    {
+      "authors": "Z. Hu, Y. Gao, and L. Shao",
+      "title": "Linear analysis of $I$-$C$-Love universal relations for neutron stars",
+      "year": 2026,
+      "citation": "Phys. Rev. D 113, 044056 (2026)",
+      "doi": "10.1103/3pj7-xts7",
+      "arxiv": "2505.13110",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ],
+      "publication_date": "2026-02-24"
+    },
+    {
+      "authors": "Y. Gao, K. Hayashi, K. Kiuchi, A. T.-L. Lam, H.-J. Kuan, and M. Shibata",
+      "title": "Convective stability analysis of massive neutron stars formed in binary mergers",
+      "year": 2026,
+      "citation": "Phys. Rev. D 113, 023011 (2026)",
+      "doi": "10.1103/w8gq-3d54",
+      "arxiv": "2501.19053",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ],
+      "publication_date": "2026-01-07"
+    },
+    {
+      "authors": "D. Gao, H.-J. Kuan, Y. Zhou, Z. Miao, M.-Z. Han, Y. Gao, C. Zhang, and E. Zhou",
+      "title": "Difference between quark stars and neutron stars in universal relations and their effect on gravitational waves",
+      "year": 2026,
+      "citation": "Phys. Rev. D 114, 043058 (2026)",
+      "doi": "10.1103/w92f-58lx",
+      "arxiv": "2512.24703",
+      "status": "journal",
+      "sources": [
+        "https://journals.aps.org/prd/abstract/10.1103/w92f-58lx"
+      ],
+      "publication_date": "2026-08-21"
+    },
+    {
+      "authors": "Y. Gao, H.-J. Kuan, C.-J. Xia, H. O. Silva, and M. Shibata",
+      "title": "Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries",
+      "year": 2025,
+      "citation": "Phys. Rev. D 112, 123006 (2025)",
+      "doi": "10.1103/nbk7-8kts",
+      "arxiv": "2509.00257",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "S.-X. Yi, W. Zhao, R.-X. Xu, X.-F. Wu, G. Stratta, S. Dall'Osso, Y.-J. Xu, A. Santangelo, S. Zane, S.-N. Zhang, et al. (including Y. Gao)",
+      "title": "Prospects for time-domain and multi-messenger science with eXTP",
+      "year": 2025,
+      "citation": "Sci. China Phys. Mech. Astron. 68, 119506 (2025)",
+      "doi": "10.1007/s11433-025-2782-2",
+      "arxiv": "2506.08368",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "M.-Z. Han, Y. Gao, K. Kiuchi, and M. Shibata",
+      "title": "Dependence of postmerger properties on the thermal heating efficiency in neutron star mergers",
+      "year": 2025,
+      "citation": "Phys. Rev. D 112, 023005 (2025)",
+      "doi": "10.1103/p6s8-khkw",
+      "arxiv": "2504.08514",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "A. T.-L. Lam, Y. Gao, H.-J. Kuan, M. Shibata, K. Van Aelst, and K. Kiuchi",
+      "title": "Accessing Universal Relations of Binary Neutron Star Waveforms in Massive Scalar-Tensor Theory",
+      "year": 2025,
+      "citation": "Phys. Rev. Lett. 134, 151402 (2025)",
+      "doi": "10.1103/PhysRevLett.134.151402",
+      "arxiv": "2410.00137",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Z. Wang, Y. Gao, D. Liang, J. Zhao, and L. Shao",
+      "title": "Vetting quark-star models with gravitational waves in the hierarchical Bayesian framework",
+      "year": 2024,
+      "citation": "JCAP 11, 038 (2024)",
+      "doi": "10.1088/1475-7516/2024/11/038",
+      "arxiv": "2409.11103",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Liu, H.-B. Li, Y. Gao, L. Shao, and Z. Hu",
+      "title": "Effects from dark matter halos on x-ray pulsar pulse profiles",
+      "year": 2024,
+      "citation": "Phys. Rev. D 110, 083018 (2024)",
+      "doi": "10.1103/PhysRevD.110.083018",
+      "arxiv": "2408.04425",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "G. Desvignes, P. Weltevrede, Y. Gao, D. I. Jones, M. Kramer, M. Caleb, R. Karuppusamy, L. Levin, K. Liu, A. G. Lyne, L. Shao, and B. Stappers",
+      "title": "A freely precessing magnetar following an X-ray outburst",
+      "year": 2024,
+      "citation": "Nature Astronomy 8, 617–627 (2024)",
+      "doi": "10.1038/s41550-024-02226-7",
+      "arxiv": "",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "H.-B. Li, Y. Gao, L. Shao, and R.-X. Xu",
+      "title": "Asteroseismology of Compact Stars",
+      "year": 2024,
+      "citation": "Universe 10, 157 (2024)",
+      "doi": "10.3390/universe10040157",
+      "arxiv": "",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Kang, C. Liu, J.-P. Zhu, Y. Gao, L. Shao, B. Zhang, H. Sun, Y.-H. I. Yin, and B.-B. Zhang",
+      "title": "Prospects for detecting neutron star–white dwarf mergers with decihertz gravitational-wave observatories",
+      "year": 2024,
+      "citation": "Mon. Not. R. Astron. Soc. 528, 5309 (2024)",
+      "doi": "10.1093/mnras/stae340",
+      "arxiv": "2309.16991",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "S. Chen, Y. Gao, E. Zhou, and R. Xu",
+      "title": "Free Energy of Anisotropic Strangeon Stars",
+      "year": 2024,
+      "citation": "Res. Astron. Astrophys. 24, 025005 (2024)",
+      "doi": "10.1088/1674-4527/ad1430",
+      "arxiv": "2305.19687",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "E. Zhou, Y. Gao, Y. Zhou, X. Lai, L. Shao, W. Wang, S. Xiong, R. Xu, S. Yi, G. Yim, et al.",
+      "title": "The Precursor of GRB211211A: A Tide-induced Giant Quake?",
+      "year": 2024,
+      "citation": "Res. Astron. Astrophys. 24, 025019 (2024)",
+      "doi": "10.1088/1674-4527/ad0825",
+      "arxiv": "2305.10682",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "C. Zhang, Y. Gao, C.-J. Xia, and R. Xu",
+      "title": "Hybrid strangeon stars",
+      "year": 2023,
+      "citation": "Phys. Rev. D 108, 123031 (2023)",
+      "doi": "10.1103/PhysRevD.108.123031",
+      "arxiv": "2309.14114",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "H. Liu, Y. Gao, Z. Li, A. Dohi, W. Wang, G. Lv, and R. Xu",
+      "title": "EOS-dependent millihertz quasi-periodic oscillation in low-mass X-ray binary",
+      "year": 2023,
+      "citation": "Mon. Not. R. Astron. Soc. 525, 2054 (2023)",
+      "doi": "10.1093/mnras/stad2424",
+      "arxiv": "2308.05288",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "G. Yim, Y. Gao, Y. Kang, L. Shao, and R. Xu",
+      "title": "Continuous gravitational waves from trapped magnetar ejecta and the connection to glitches and antiglitches",
+      "year": 2024,
+      "citation": "Mon. Not. R. Astron. Soc. 527, 2379–2392 (2024)",
+      "doi": "10.1093/mnras/stad3337",
+      "arxiv": "2308.01588",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "C. Zhang, Y. Gao, C.-J. Xia, and R. Xu",
+      "title": "Rescaling strange-cluster stars and its implications on gravitational-wave echoes",
+      "year": 2023,
+      "citation": "Phys. Rev. D 108, 063002 (2023)",
+      "doi": "10.1103/PhysRevD.108.063002",
+      "arxiv": "2305.13323",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Gao, L. Shao, and J. Steinhoff",
+      "title": "A Tight Universal Relation between the Shape Eccentricity and the Moment of Inertia for Rotating Neutron Stars",
+      "year": 2023,
+      "citation": "Astrophys. J. 954, 16 (2023)",
+      "doi": "10.3847/1538-4357/ace776",
+      "arxiv": "2303.14130",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "H.-B. Li, Y. Gao, L. Shao, R. Xu, and R.-X. Xu",
+      "title": "$g$-mode of neutron stars in pseudo-Newtonian gravity",
+      "year": 2023,
+      "citation": "Phys. Rev. D 108, 064005 (2023)",
+      "doi": "10.1103/PhysRevD.108.064005",
+      "arxiv": "2302.03856",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Gao, R. Xu, and L. Shao",
+      "title": "Precession of Neutron Stars Under Lorentz Violation and Observational Consequences",
+      "year": 2023,
+      "citation": "Proceedings of the Ninth Meeting on CPT and Lorentz Symmetry (2023)",
+      "doi": "10.1142/9789811275388_0051",
+      "arxiv": "",
+      "status": "proceedings",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Gao, L. Shao, G. Desvignes, D. I. Jones, M. Kramer, and G. Yim",
+      "title": "Precession of magnetars: dynamical evolutions and modulations on polarized electromagnetic waves",
+      "year": 2023,
+      "citation": "Mon. Not. R. Astron. Soc. 519, 1080 (2023)",
+      "doi": "10.1093/mnras/stac3546",
+      "arxiv": "2211.17087",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "H.-B. Li, Y. Gao, L. Shao, R.-X. Xu, and R. Xu",
+      "title": "Oscillation modes and gravitational waves from strangeon stars",
+      "year": 2022,
+      "citation": "Mon. Not. R. Astron. Soc. 516, 6172 (2022)",
+      "doi": "10.1093/mnras/stac2622",
+      "arxiv": "2206.09407",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "R. Xu, Y. Gao, and L. Shao",
+      "title": "Neutron stars in massive scalar-Gauss-Bonnet gravity: Spherical structure and time-independent perturbations",
+      "year": 2022,
+      "citation": "Phys. Rev. D 105, 024003 (2022)",
+      "doi": "10.1103/PhysRevD.105.024003",
+      "arxiv": "2111.06561",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Gao, X.-Y. Lai, L. Shao, and R.-X. Xu",
+      "title": "Rotation and deformation of strangeon stars in the Lennard-Jones model",
+      "year": 2022,
+      "citation": "Mon. Not. R. Astron. Soc. 509, 2758 (2022)",
+      "doi": "10.1093/mnras/stab3181",
+      "arxiv": "2109.13234",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Z. Hu, Y. Gao, R. Xu, and L. Shao",
+      "title": "Scalarized neutron stars in massive scalar-tensor gravity: X-ray pulsars and tidal deformability",
+      "year": 2021,
+      "citation": "Phys. Rev. D 104, 104014 (2021)",
+      "doi": "10.1103/PhysRevD.104.104014",
+      "arxiv": "2109.13453",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "J. Zhao, L. Shao, Y. Gao, C. Liu, Z. Cao, and B.-Q. Ma",
+      "title": "Probing dipole radiation from binary neutron stars with ground-based laser-interferometer and atom-interferometer gravitational-wave observatories",
+      "year": 2021,
+      "citation": "Phys. Rev. D 104, 084008 (2021)",
+      "doi": "10.1103/PhysRevD.104.084008",
+      "arxiv": "2106.04883",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "R. Xu, Y. Gao, and L. Shao",
+      "title": "Signatures of Lorentz Violation in Continuous Gravitational-Wave Spectra of Ellipsoidal Neutron Stars",
+      "year": 2021,
+      "citation": "Galaxies 9, 12 (2021)",
+      "doi": "10.3390/galaxies9010012",
+      "arxiv": "2101.09431",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "R. Xu, Y. Gao, and L. Shao",
+      "title": "Precession of spheroids under Lorentz violation and observational consequences for neutron stars",
+      "year": 2021,
+      "citation": "Phys. Rev. D 103, 084028 (2021)",
+      "doi": "10.1103/PhysRevD.103.084028",
+      "arxiv": "2012.01320",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Gao and L. Shao",
+      "title": "Precession of triaxially deformed neutron stars",
+      "year": 2021,
+      "citation": "Astron. Nachr. 342, 364 (2021)",
+      "doi": "10.1002/asna.202113935",
+      "arxiv": "2011.04472",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "R. Xu, Y. Gao, and L. Shao",
+      "title": "Strong-field effects in massive scalar-tensor gravity for slowly spinning neutron stars and application to X-ray pulsar pulse profiles",
+      "year": 2020,
+      "citation": "Phys. Rev. D 102, 064057 (2020)",
+      "doi": "10.1103/PhysRevD.102.064057",
+      "arxiv": "2007.10080",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Gao, L. Shao, R. Xu, L. Sun, C. Liu, and R.-X. Xu",
+      "title": "Triaxially-deformed Freely-precessing Neutron Stars: Continuous electromagnetic and gravitational radiation",
+      "year": 2020,
+      "citation": "Mon. Not. R. Astron. Soc. 498, 1826 (2020)",
+      "doi": "10.1093/mnras/staa2476",
+      "arxiv": "2007.02528",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "C. Liu, L. Shao, J. Zhao, and Y. Gao",
+      "title": "Multiband Observation of LIGO/Virgo Binary Black Hole Mergers in the Gravitational-wave Transient Catalog GWTC-1",
+      "year": 2020,
+      "citation": "Mon. Not. R. Astron. Soc. 496, 182 (2020)",
+      "doi": "10.1093/mnras/staa1512",
+      "arxiv": "2004.12096",
+      "status": "journal",
+      "sources": [
+        "https://gravyong.github.io/publication/"
+      ]
+    },
+    {
+      "authors": "Y. Gao and M. Shibata",
+      "title": "Quasi-normal Modes and Instabilities of Rotating Relativistic Stars",
+      "year": 2026,
+      "citation": "",
+      "doi": "",
+      "arxiv": "2611.03986",
+      "status": "preprint",
+      "sources": [
+        "https://arxiv.org/abs/2611.03986"
+      ]
+    },
+    {
+      "authors": "Y. Gao, M.-Z. Han, K. Kiuchi, M. Shibata, E. Zhou, and K. Hotokezaka",
+      "title": "Subsolar-mass binary mergers of strange stars and neutron stars: gravitational waves and ejecta",
+      "year": 2026,
+      "citation": "",
+      "doi": "",
+      "arxiv": "2607.07668",
+      "status": "preprint",
+      "sources": [
+        "https://arxiv.org/abs/2607.07668"
+      ]
+    },
+    {
+      "authors": "H. Sun, J.-X. Niu, Y. Gao, H.-B. Li, and C.-J. Xia",
+      "title": "Asteroseismology of neutron stars with both hyperons and $\\Delta$ resonances",
+      "year": 2026,
+      "citation": "Phys. Rev. D (accepted, 2026)",
+      "doi": "10.1103/hlzn-kp4n",
+      "arxiv": "2606.24343",
+      "status": "journal",
+      "sources": [
+        "https://arxiv.org/abs/2606.24343",
+        "https://journals.aps.org/prd/accepted/10.1103/hlzn-kp4n"
+      ],
+      "acceptance_date": "2026-10-07"
+    },
+    {
+      "authors": "H. Shen, Y. Gao, H.-B. Li, and R.-X. Xu",
+      "title": "Tidal Deformation and Strain Accumulation of Solid Compact Stars",
+      "year": 2026,
+      "citation": "Mon. Not. R. Astron. Soc., stag2059 (2026; accepted manuscript published online)",
+      "doi": "10.1093/mnras/stag2059",
+      "arxiv": "2607.11780",
+      "status": "journal",
+      "sources": [
+        "https://academic.oup.com/mnras/advance-article/doi/10.1093/mnras/stag2059/9012726"
+      ],
+      "publication_date": "2026-11-04"
+    },
+    {
+      "authors": "S. Li, H. Lü, Y. Gao, R. Xu, L. Shao, and H. Yu",
+      "title": "Neutron stars more compact than black holes as a probe of strong-field gravity",
+      "year": 2026,
+      "citation": "Phys. Rev. D 114, L021504 (2026)",
+      "doi": "10.1103/3c9w-xc9l",
+      "arxiv": "2312.01406",
+      "status": "journal",
+      "sources": [
+        "https://journals.aps.org/prd/abstract/10.1103/3c9w-xc9l"
+      ],
+      "publication_date": "2026-07-21"
+    },
+    {
+      "authors": "Y. Gao and J. Steinhoff",
+      "title": "Relativistic tidal response and mode excitation in neutron-star binaries",
+      "year": 2026,
+      "citation": "",
+      "doi": "",
+      "arxiv": "2611.14243",
+      "status": "preprint",
+      "manuscript_date": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2611.14243"
+      ],
+      "anchor": "pub:relativistic-tides"
+    }
+  ]
+}

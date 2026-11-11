@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Rebuild _pages/publication.md from your Inspire-HEP record.
+Rebuild _pages/publication.md from checked metadata, falling back to Inspire-HEP.
+
+When _data/publications.json exists, use its bibliographic records. This keeps
+new arXiv papers and corrected journal details available before Inspire updates.
 
 Layout:
   - One continuous numbered list of all peer-reviewed papers (newest first
@@ -21,11 +24,13 @@ import json
 import re
 import urllib.request
 from collections import defaultdict
+from datetime import date
 from pathlib import Path
 
 INSPIRE_AUTHOR = "Yong.Gao.1"
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "_pages" / "publication.md"
+CHECKED = ROOT / "_data" / "publications.json"
 
 
 def fetch():
@@ -198,33 +203,54 @@ FILTER_SCRIPT = r"""<script>
 """
 
 
+def render_checked_entry(record, num):
+    authors = html.escape(record["authors"]).replace("Y. Gao", "<strong>Y. Gao</strong>")
+    body = authors + ", <em>" + html.escape(record["title"]) + "</em>"
+    citation = html.escape(record.get("citation", ""))
+    if citation:
+        citation = re.sub(r"(?<![A-Za-z0-9])(\d{1,3})(?=,)", r"<strong>\1</strong>", citation, count=1)
+        if record.get("doi"):
+            citation = '<a href="https://doi.org/' + html.escape(record["doi"], quote=True) + '">' + citation + '</a>'
+        body += ", " + citation
+    else:
+        body += f', Preprint ({record["year"]})'
+    body += "."
+    if record.get("arxiv"):
+        body += ' <a href="https://arxiv.org/abs/' + html.escape(record["arxiv"], quote=True) + '" style="color: #F48FB1;">[arXiv]</a>'
+    return f'<article class="pub-entry" data-year="{record["year"]}" data-num="{num}">{body}</article>'
+
+
 def main():
-    hits = fetch()
-    print(f"  fetched {len(hits)} papers from Inspire-HEP")
+    if CHECKED.exists():
+        records = json.loads(CHECKED.read_text())["records"]
+        records.sort(key=lambda r: (
+            r["year"],
+            r.get("publication_date") or r.get("acceptance_date") or r.get("manuscript_date", ""),
+            r.get("arxiv", ""),
+        ), reverse=True)
+        years = sorted({r["year"] for r in records}, reverse=True)
+        entry_html = [render_checked_entry(r, i + 1) for i, r in enumerate(records)]
+        source_note = "Published and accepted journal articles, preprints and conference contributions."
+        print(f"  loaded {len(records)} checked bibliographic records")
+    else:
+        hits = fetch()
+        print(f"  fetched {len(hits)} papers from Inspire-HEP")
+        by_year = defaultdict(list)
+        for h in hits:
+            m = h["metadata"]
+            by_year[pub_year(m)].append(m)
+        years = sorted(by_year.keys(), reverse=True)
+        flat = [(y, m) for y in years for m in by_year[y]]
+        entry_html = [render_entry_html(m, y, i + 1) for i, (y, m) in enumerate(flat)]
+        source_note = "Generated from my Inspire-HEP record."
 
-    # Group by year first to preserve ordering, then flatten
-    by_year = defaultdict(list)
-    for h in hits:
-        m = h["metadata"]
-        by_year[pub_year(m)].append(m)
-
-    years = sorted(by_year.keys(), reverse=True)
-    flat = []
-    for y in years:
-        for m in by_year[y]:
-            flat.append((y, m))
-
-    # Render entries with running 1.. numbering
-    entry_html = [
-        render_entry_html(m, y, i + 1) for i, (y, m) in enumerate(flat)
-    ]
 
     out = []
     out.append("---")
     out.append('title: "Publications"')
     out.append("date: 2022-10-16")
     out.append("permalink: /publication/")
-    out.append("modified: 2026-04-25")
+    out.append(f"modified: {date.today().isoformat()}")
     out.append("mathjax: true")
     out.append("excerpt:")
     out.append("tags:")
@@ -238,7 +264,7 @@ def main():
     out.append("and")
     out.append('<a href="https://scholar.google.com/citations?user={{ site.author.google-scholar }}"><i class="ai ai-fw ai-google-scholar" aria-hidden="true"></i> Google Scholar</a></span>.')
     out.append("<br>")
-    out.append("Generated from my Inspire-HEP record. Click a year to filter; click <strong>All</strong> to restore the full list.")
+    out.append(source_note + " Click a year to filter; click <strong>All</strong> to restore the full list.")
     out.append("</p>")
     out.append('<hr style="border:1px solid gray">')
     out.append("")
@@ -264,7 +290,7 @@ def main():
     OUT.write_text("\n".join(out))
     print(f"  wrote {OUT}")
     print(f"  years present: {', '.join(str(y) for y in years)}")
-    print(f"  total peer-reviewed: {len(entry_html)}")
+    print(f"  total publications: {len(entry_html)}")
 
 
 if __name__ == "__main__":

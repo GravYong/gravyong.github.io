@@ -9,13 +9,49 @@ header:
   overlay_filter: 0.3
 ---
 
-I'm a postdoctoral researcher in the [Computational Relativistic Astrophysics group](https://www.aei.mpg.de/comp-rel-astro) led by [Masaru Shibata](https://www2.yukawa.kyoto-u.ac.jp/~masaru.shibata/indexj.html) at the [Albert Einstein Institute](https://www.aei.mpg.de/2772/de), Potsdam, working on **neutron-star physics** and **strong-field tests of gravity**. See the [research]({{ site.url }}/research/), [publications]({{ site.url }}/publication/), and [links]({{ site.url }}/Links/) pages for more.
+I'm a postdoctoral researcher in the [Computational Relativistic Astrophysics division](https://www.aei.mpg.de/comp-rel-astro) led by [Masaru Shibata](https://www2.yukawa.kyoto-u.ac.jp/~masaru.shibata/indexj.html) at the [Albert Einstein Institute](https://www.aei.mpg.de/2772/de), Potsdam. My research combines **analytical modelling, relativistic perturbation theory and numerical relativity** to probe dense matter inside neutron stars and gravity in the strong-field regime. I study rotating-star oscillations and instabilities, dynamical tides, and compact-binary mergers. See my [research]({{ site.url }}/research/), [publications]({{ site.url }}/publication/), and [CV]({{ site.url }}/cv/) for more.
 
 <h2 class="home-section">Recent work</h2>
 <hr style="border:1px solid gray">
 
 <div class="paper-spotlight">
-  <div class="paper-spotlight__tag">New · 2026</div>
+  <div class="paper-spotlight__tag">New · November 2026</div>
+  <h3 class="paper-spotlight__title"><a href="https://arxiv.org/abs/2611.14243">Relativistic tidal response and mode excitation in neutron-star binaries</a></h3>
+  <p class="paper-spotlight__venue">Y. Gao and J. Steinhoff — arXiv:2611.14243 (2026)</p>
+  <p class="paper-spotlight__summary is-clamped">We calculate the relativistic dynamical tidal response of neutron stars with composition stratification, elastic crusts and possible first-order phase transitions. Matching stellar perturbations to effective field theory through analytical Mano–Suzuki–Takasugi exterior solutions gives mode frequencies and tidal couplings. We incorporate these modes into effective-one-body evolution to follow their excitation, gravitational-wave emission and crustal strain. In a representative hadronic–hybrid binary, the low-frequency modes produce a small gravitational-wave phase shift, yet gravity and shear modes can still drive parts of the crust beyond its breaking strain.</p>
+  <button type="button" class="paper-spotlight__more" aria-expanded="false">Show more</button>
+  <p class="paper-spotlight__links">
+    <a class="btn" href="https://arxiv.org/abs/2611.14243" style="color: #F48FB1;">arXiv</a>
+    <a class="btn" href="https://arxiv.org/pdf/2611.14243">PDF</a>
+  </p>
+</div>
+
+<div class="paper-spotlight">
+  <div class="paper-spotlight__tag">New · November 2026</div>
+  <h3 class="paper-spotlight__title"><a href="https://arxiv.org/abs/2611.03986">Quasi-normal modes and instabilities of rotating relativistic stars</a></h3>
+  <p class="paper-spotlight__venue">Y. Gao and M. Shibata — arXiv:2611.03986 (2026)</p>
+  <p class="paper-spotlight__summary is-clamped">We directly calculate complex mode frequencies of rapidly rotating stars in full general relativity. Starting from the second-order Einstein–fluid action, we solve the coupled fluid–spacetime eigenvalue problem with outgoing-wave boundary conditions. The spectrum includes <em>f</em>, <em>r</em>, other inertial and strongly damped <em>w</em> modes, together with their damping or growth rates. The framework resolves secular and dynamical instabilities, mode interactions and the onset of quasiradial collapse.</p>
+  <button type="button" class="paper-spotlight__more" aria-expanded="false">Show more</button>
+  <p class="paper-spotlight__links">
+    <a class="btn" href="https://arxiv.org/abs/2611.03986" style="color: #F48FB1;">arXiv</a>
+    <a class="btn" href="https://arxiv.org/pdf/2611.03986">PDF</a>
+  </p>
+</div>
+
+<div class="paper-spotlight">
+  <div class="paper-spotlight__tag">Recent · July 2026</div>
+  <h3 class="paper-spotlight__title"><a href="https://arxiv.org/abs/2607.07668">Subsolar-mass binary mergers of strange stars and neutron stars: gravitational waves and ejecta</a></h3>
+  <p class="paper-spotlight__venue">Y. Gao, M.-Z. Han, K. Kiuchi, M. Shibata, E. Zhou and K. Hotokezaka — arXiv:2607.07668 (2026)</p>
+  <p class="paper-spotlight__summary is-clamped">I constructed binary initial data and carried out the first numerical-relativity simulations of subsolar-mass strange-star mergers. Comparing them with neutron-star binaries, we find that the ratio of the postmerger peak frequency to the inspiral cutoff frequency separates the two classes in the simulated models. Strange-star mergers can eject about 0.01 solar masses of decompressed quark matter, providing a possible source of an electromagnetic counterpart to subsolar-mass events.</p>
+  <button type="button" class="paper-spotlight__more" aria-expanded="false">Show more</button>
+  <p class="paper-spotlight__links">
+    <a class="btn" href="https://arxiv.org/abs/2607.07668" style="color: #F48FB1;">arXiv</a>
+    <a class="btn" href="https://arxiv.org/pdf/2607.07668">PDF</a>
+  </p>
+</div>
+
+<div class="paper-spotlight">
+  <div class="paper-spotlight__tag">Selected · 2026</div>
   <h3 class="paper-spotlight__title"><a href="{{ site.url }}/convection/">Convective stability of massive neutron stars formed in binary mergers</a></h3>
   <p class="paper-spotlight__venue">Y. Gao, K. Hayashi, K. Kiuchi, A. T.-L. Lam, H.-J. Kuan, M. Shibata — Phys. Rev. D <strong>113</strong>, 023011 (2026)</p>
   <p class="paper-spotlight__summary is-clamped">We run fully general-relativistic hydrodynamics simulations of binary neutron-star mergers out to 100 ms post-merger and derive — then apply for the first time — convective-stability criteria for hot, differentially rotating relativistic stars that include both buoyancy and rotation. The remnant massive neutron stars show no large-scale convective instability: entropy and angular momentum both increase outward, and rotation stabilizes regions that the Schwarzschild criterion would call unstable. Mode analysis reveals no observable inertial modes after the quadrupolar <em>f</em>-modes damp, while the persistent <em>m</em>=1 one-armed mode correlates strongly with violations of linear-momentum conservation — suggesting it may be numerical rather than physical.</p>
