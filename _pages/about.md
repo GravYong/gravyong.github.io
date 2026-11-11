@@ -9,7 +9,7 @@ header:
   overlay_filter: 0.3
 ---
 
-I'm a postdoctoral researcher in the [Computational Relativistic Astrophysics division](https://www.aei.mpg.de/comp-rel-astro) led by [Masaru Shibata](https://www2.yukawa.kyoto-u.ac.jp/~masaru.shibata/indexj.html) at the [Albert Einstein Institute](https://www.aei.mpg.de/2772/de), Potsdam. Previously, I was a Ph.D. student in Lijing Shao's KIAAGravity group at Peking University. My research combines **analytical modelling, relativistic perturbation theory and numerical relativity** to probe dense matter inside neutron stars and gravity in the strong-field regime. See my [research]({{ site.url }}/research/), [publications]({{ site.url }}/publication/), and [CV]({{ site.url }}/cv/) for more.
+I'm a postdoctoral researcher in the [Computational Relativistic Astrophysics division](https://www.aei.mpg.de/comp-rel-astro) led by [Masaru Shibata](https://www2.yukawa.kyoto-u.ac.jp/~masaru.shibata/indexj.html) at the [Albert Einstein Institute](https://www.aei.mpg.de/2772/de), Potsdam. Previously, I was a Ph.D. student in [Lijing Shao](https://friendshao.github.io/)'s [KIAAGravity Group](https://kiaagravity.github.io/) at Peking University. My research combines **analytical modelling, relativistic perturbation theory and numerical relativity** to probe dense matter inside neutron stars and gravity in the strong-field regime. See my [research]({{ site.url }}/research/), [publications]({{ site.url }}/publication/), and [CV]({{ site.url }}/cv/) for more.
 
 <h2 class="home-section">Recent work</h2>
 <hr style="border:1px solid gray">
